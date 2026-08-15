@@ -16,7 +16,7 @@
     <div class="brandmark">BB</div>
     <div><b>BBマスター</b><span>Broadband Sales Navigator</span></div>
   </div>
-  <div class="version">Ver.2.3</div>
+  <div class="version">Ver.2.4</div>
 </header>
 
 <main>
@@ -54,6 +54,7 @@
     <button class="feature f6" onclick="go('quiz')"><span class="ico">✓</span><b>接客問題</b><small>実践形式で覚える</small></button>
     <button class="feature f7" onclick="go('construction')"><span class="ico">⌂</span><b>工事マスター</b><small>戸建・集合・宅内を図解</small></button>
     <button class="feature f8" onclick="go('scenario')"><span class="ico">☑</span><b>接客シナリオ</b><small>実際の案内例で覚える</small></button>
+    <button class="feature f9" onclick="go('visuals')"><span class="ico">◈</span><b>図解ライブラリ</b><small>絵と図で一気に理解</small></button>
   </div>
 
   <section class="card today">
@@ -103,6 +104,16 @@
     <div class="carrier c-other"><b>その他</b><span>@nifty光を含め比較</span></div>
   </div>
   <p class="small-note">※スマホ会社だけで決めず、提供エリア・建物・電話・TV・工事可否まで確認。</p>
+</section>
+
+
+<section class="card">
+  <h3 class="mini-title">サービスの大きな分け方</h3>
+  <div class="service-map">
+    <div class="svcmap fiber-map"><b>光コラボ系</b><span>ドコモ光 / @nifty光 / SoftBank 光</span></div>
+    <div class="svcmap indie-map"><b>独自回線系</b><span>auひかり / NURO光</span></div>
+    <div class="svcmap home-map"><b>ホームルーター</b><span>home 5G / SoftBank Air</span></div>
+  </div>
 </section>
 
 <section class="card compare-tip">
@@ -370,6 +381,33 @@
   </div>
 </section>
 
+
+<section class="card">
+  <h3 class="mini-title">戸建と集合住宅の違いを一言で</h3>
+  <div class="house-apartment-compare">
+    <div class="hac">
+      <div class="hac-icon">🏠</div>
+      <b>戸建</b>
+      <p>建物へ引き込むイメージ。外から家へ回線を入れる流れを想像すると分かりやすい。</p>
+    </div>
+    <div class="hac">
+      <div class="hac-icon">🏢</div>
+      <b>集合住宅</b>
+      <p>まず建物設備を確認するイメージ。共用部からお客様宅までの設備状況がポイント。</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h3 class="mini-title">よくある工事質問</h3>
+  <div class="qa-grid">
+    <div class="qa-item"><b>Q. すぐ使える？</b><span>A. 工事内容や日程によります。工事不要のケースもあります。</span></div>
+    <div class="qa-item"><b>Q. 工事って何するの？</b><span>A. 回線をつないで、ONUや宅内側の接続を確認します。</span></div>
+    <div class="qa-item"><b>Q. マンションでも大丈夫？</b><span>A. 住所と建物設備の確認が大切です。</span></div>
+    <div class="qa-item"><b>Q. Wi‑Fiも使える？</b><span>A. ONUのほか、Wi‑Fiルーターなど宅内機器も確認します。</span></div>
+  </div>
+</section>
+
 <section class="alert"><b>工事費は回線・プラン・建物・工事内容で変わります。</b><br>BBマスターでは工事の仕組みを理解し、最終金額は最新の店頭資料で確認する使い方にしています。</section>
 </section>
 
@@ -443,6 +481,114 @@
   </div>
 </section>
 
+
+<section id="visuals" class="page">
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>見て覚えるページ</span><h2>図解ライブラリ</h2></div></div>
+
+  <section class="card">
+    <h3 class="mini-title">光回線 と ホームルーター</h3>
+    <div class="big-compare">
+      <div class="big-side fiber-side">
+        <div class="illustration fiber-ill">
+          <div class="pole2">電柱</div>
+          <div class="line2"></div>
+          <div class="house2">家</div>
+          <div class="room2">ONU</div>
+          <div class="wifi2">)))</div>
+        </div>
+        <h4>光回線</h4>
+        <ul>
+          <li>家に回線を引き込む</li>
+          <li>工事が必要になることがある</li>
+          <li>固定回線として使う</li>
+          <li>電話・TVも絡みやすい</li>
+        </ul>
+      </div>
+      <div class="big-side home-side">
+        <div class="illustration home-ill">
+          <div class="tower2">電波</div>
+          <div class="wave2">)))</div>
+          <div class="router2">HOME<br>5G / Air</div>
+          <div class="devices2">📱 💻 📺</div>
+        </div>
+        <h4>ホームルーター</h4>
+        <ul>
+          <li>光回線工事は不要</li>
+          <li>登録住所・電波確認が大切</li>
+          <li>すぐ使いたい人に向く</li>
+          <li>固定回線と特徴が違う</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">新規・転用・事業者変更の違い</h3>
+    <div class="move-grid">
+      <div class="move-card">
+        <div class="move-head">新規</div>
+        <div class="move-diagram"><span>今の回線なし / 別系統</span><i>→</i><b>新しく契約</b></div>
+        <p>最初から新しく入るイメージ。工事や開通日を確認。</p>
+      </div>
+      <div class="move-card">
+        <div class="move-head">転用</div>
+        <div class="move-diagram"><span>フレッツ光</span><i>→</i><b>光コラボ</b></div>
+        <p>フレッツ光から光コラボへ。1G / 10G や電話・TVも確認。</p>
+      </div>
+      <div class="move-card">
+        <div class="move-head">事業者変更</div>
+        <div class="move-diagram"><span>光コラボ A</span><i>→</i><b>光コラボ B</b></div>
+        <p>光コラボ同士の乗り換え。現在回線名を必ず確認。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">番号を残したい時の考え方</h3>
+    <div class="tel-tree">
+      <div class="telq">固定電話を使ってる？</div>
+      <div class="tarrow">↓</div>
+      <div class="telrow">
+        <div class="telbox yes">はい<br><span>番号を残す？ 発番元は？</span></div>
+        <div class="telbox no">いいえ<br><span>ネット中心で進めやすい</span></div>
+      </div>
+      <div class="tarrow">↓</div>
+      <div class="telend">番号引継ぎ可否・工事・オプションを確認</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">テレビがあると確認すること</h3>
+    <div class="tv-check-visual">
+      <div class="tvcase"><b>地デジだけ</b><span>基本の視聴方法を確認</span></div>
+      <div class="tvcase"><b>BSも見る</b><span>必要な視聴条件を確認</span></div>
+      <div class="tvcase"><b>光TV利用</b><span>回線変更で工事や手続きが変わる場合あり</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">速度は何で変わる？</h3>
+    <div class="speed-wheel">
+      <div class="center-speed">速度</div>
+      <div class="snode s1">回線プラン</div>
+      <div class="snode s2">宅内機器</div>
+      <div class="snode s3">Wi‑Fi環境</div>
+      <div class="snode s4">端末性能</div>
+    </div>
+    <p class="small-note">「10Gだから絶対速い」ではなく、回線・機器・Wi‑Fi・端末をまとめて考える。</p>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">スマホ会社から候補を出す図</h3>
+    <div class="carrier-flow-visual">
+      <div class="cfv docomo"><b>docomo</b><span>ドコモ光 / home 5G</span></div>
+      <div class="cfv sb"><b>SoftBank</b><span>SoftBank 光 / Air</span></div>
+      <div class="cfv au"><b>au・UQ</b><span>auひかりも候補</span></div>
+      <div class="cfv other"><b>その他</b><span>@nifty光含め比較</span></div>
+    </div>
+  </section>
+</section>
+
 <section id="basics" class="page">
   <div class="page-title"><button onclick="go('home')">←</button><div><span>新人さん向け</span><h2>超基礎を図で覚える</h2></div></div>
   <div class="basic-grid">
@@ -502,6 +648,7 @@
   <button onclick="go('procedure')"><span>↗</span>手続き</button>
   <button onclick="go('construction')"><span>⌂</span>工事</button>
   <button onclick="go('scenario')"><span>☑</span>事例</button>
+  <button onclick="go('visuals')"><span>◈</span>図解</button>
 </nav>
 </div>
 <script src="app.js"></script>

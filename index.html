@@ -16,7 +16,7 @@
     <div class="brandmark">BB</div>
     <div><b>BBマスター</b><span>Broadband Sales Navigator</span></div>
   </div>
-  <div class="version">Ver.2.0</div>
+  <div class="version">Ver.2.1</div>
 </header>
 
 <main>
@@ -67,7 +67,18 @@
       <span><b>5</b>重視点</span>
     </div>
   </section>
-  <section class="notice">料金・還元・工事費・受付条件は変更があります。<b>最新の店頭資料を最終確認</b>して案内してください。</section>
+  
+<section class="visual-guide card">
+  <div class="visual-title"><span>図で覚える</span><h2>回線選びの全体像</h2></div>
+  <div class="network-map">
+    <div class="customer"><b>お客様</b><small>何を重視？</small></div><div class="map-arrow">→</div>
+    <div class="decision"><div><b>工事OK</b><span>光回線へ</span></div><div><b>工事NG</b><span>ホームルーターへ</span></div></div>
+    <div class="map-arrow">→</div>
+    <div class="targets"><div class="t-fiber">ドコモ光<br>SoftBank 光<br>@nifty光</div><div class="t-indie">auひかり<br>NURO光</div><div class="t-home">home 5G<br>SoftBank Air</div></div>
+  </div>
+</section>
+
+<section class="notice">料金・還元・工事費・受付条件は変更があります。<b>最新の店頭資料を最終確認</b>して案内してください。</section>
 </section>
 
 <section id="diagnosis" class="page">
@@ -80,7 +91,19 @@
   <div class="page-title"><button onclick="go('home')">←</button><div><span>7サービス比較</span><h2>「何が違う？」を一目で</h2></div></div>
   <div class="legend"><span class="dot fiber"></span>光回線 <span class="dot independent"></span>独自回線 <span class="dot home"></span>ホームルーター</div>
   <div id="serviceCards" class="service-grid"></div>
-  <section class="card compare-tip">
+  
+<section class="card carrier-map">
+  <h3>スマホから候補を出す</h3>
+  <div class="carrier-row">
+    <div class="carrier c-docomo"><b>docomo</b><span>ドコモ光 / home 5G</span></div>
+    <div class="carrier c-sb"><b>SoftBank</b><span>SoftBank 光 / Air</span></div>
+    <div class="carrier c-au"><b>au / UQ</b><span>auひかりも候補</span></div>
+    <div class="carrier c-other"><b>その他</b><span>@nifty光を含め比較</span></div>
+  </div>
+  <p class="small-note">※スマホ会社だけで決めず、提供エリア・建物・電話・TV・工事可否まで確認。</p>
+</section>
+
+<section class="card compare-tip">
     <h3>新人さん向け覚え方</h3>
     <div class="memory">
       <div><b>工事OK</b><span>光回線を中心に比較</span></div>
@@ -127,7 +150,19 @@
 
 <section id="phone" class="page">
   <div class="page-title"><button onclick="go('home')">←</button><div><span>見落とし防止</span><h2>固定電話・TV・工事</h2></div></div>
-  <div class="triple">
+  
+<section class="card check-route">
+  <h3>ネットだけで決めない！</h3>
+  <div class="check-flow">
+    <div class="cf-net"><b>ネット</b><span>候補決定</span></div><i>＋</i>
+    <div class="cf-phone"><b>電話</b><span>番号維持？</span></div><i>＋</i>
+    <div class="cf-tv"><b>TV</b><span>視聴方法？</span></div><i>＋</i>
+    <div class="cf-work"><b>工事</b><span>可能？</span></div><i>＝</i>
+    <div class="cf-ok"><b>最終提案</b><span>ここで決定</span></div>
+  </div>
+</section>
+
+<div class="triple">
     <article class="topic card"><div class="topic-icon">☎</div><h3>固定電話</h3><ol><li>今の電話サービス</li><li>番号を残したい？</li><li>発番元は？</li><li>オプション利用は？</li></ol><div class="warn">番号引継ぎは条件で変わる</div></article>
     <article class="topic card"><div class="topic-icon">▣</div><h3>テレビ</h3><ol><li>光TVを使ってる？</li><li>地デジだけ？</li><li>BS / 専門CHは？</li><li>回線変更後も必要？</li></ol><div class="warn">TV工事が変わる場合あり</div></article>
     <article class="topic card"><div class="topic-icon">⌁</div><h3>工事</h3><ol><li>戸建 / 集合住宅</li><li>工事できる？</li><li>提供エリア</li><li>開通希望時期</li></ol><div class="warn">建物設備で条件が変わる</div></article>

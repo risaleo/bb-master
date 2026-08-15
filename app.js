@@ -25,30 +25,37 @@ const diag=[
  {q:'一番重視することは？',sub:'最後に優先順位を確認。',opts:['月々の料金','速度','工事したくない','スマホとのセット','電話・TVを維持','よく分からない']}
 ];
 let step=0, answers=[];
+
 function renderDiag(){
  const card=document.getElementById('diagCard'), bar=document.querySelector('#diagProgress i');
- bar.style.width=((step+1)/diag.length*100)+'%';
+ bar.style.width=(step>=diag.length?100:((step+1)/diag.length*100))+'%';
  if(step>=diag.length){
-   const a=answers.join('|');
-   let tags=[];
+   const a=answers.join('|'); let tags=[];
    if(a.includes('docomo'))tags.push('ドコモ光','home 5G');
    if(a.includes('SoftBank'))tags.push('SoftBank 光','SoftBank Air');
    if(a.includes('au / UQ'))tags.push('auひかり');
    if(a.includes('工事したくない'))tags.push('home 5G / SoftBank Air');
    if(a.includes('速度'))tags.push('10G / NURO光 / auひかりも確認');
+   if(a.includes('電話あり')||a.includes('TVあり')||a.includes('両方あり'))tags.push('電話・TVの引継ぎ条件を先に確認');
    if(!tags.length)tags.push('@nifty光を含め固定回線を比較');
    tags=[...new Set(tags)];
-   card.innerHTML=`<span class="step-no">診断完了</span><h3>候補をここから絞る</h3><p>最終決定ではなく「次に確認する候補」です。</p>
+   card.innerHTML=`<div class="diag-navrow"><button class="diag-back" onclick="backDiag()">← 1つ前に戻る</button><span class="step-no">診断完了</span></div>
+   <h3>候補をここから絞る</h3><p>最終決定ではなく「次に確認する候補」です。</p>
    <div class="result-box"><h4>提案候補</h4><div class="result-tags">${tags.map(t=>`<span>${t}</span>`).join('')}</div>
+   <div class="mini-flow"><div>候補</div><i>→</i><div>提供エリア</div><i>→</i><div>電話・TV</div><i>→</i><div>最新条件</div></div>
    <p style="font-size:13px;color:#667085;line-height:1.7;margin-bottom:0">提供エリア・建物・1G/10G・電話/TV・最新キャンペーン・受付条件を確認して最終提案してください。</p></div>
    <button class="cta" onclick="resetDiag()">最初からやり直す</button>`;
    return;
  }
  const d=diag[step];
- card.innerHTML=`<span class="step-no">STEP ${step+1} / ${diag.length}</span><h3>${d.q}</h3><p>${d.sub}</p>
- <div class="choice-grid">${d.opts.map(o=>`<button class="choice" onclick="chooseDiag('${o.replaceAll("'","")}')">${o}</button>`).join('')}</div>`;
+ const prev=step>0?`<button class="diag-back" onclick="backDiag()">← 1つ前に戻る</button>`:`<span></span>`;
+ card.innerHTML=`<div class="diag-navrow">${prev}<span class="step-no">STEP ${step+1} / ${diag.length}</span></div>
+ <h3>${d.q}</h3><p>${d.sub}</p>
+ <div class="choice-grid">${d.opts.map(o=>`<button class="choice" onclick="chooseDiag('${o.replaceAll("'","")}')">${o}</button>`).join('')}</div>
+ ${answers.length?`<div class="answer-trail"><b>ここまで：</b>${answers.map((x,i)=>`<span>${i+1}. ${x}</span>`).join('')}</div>`:''}`;
 }
 function chooseDiag(v){answers.push(v);step++;renderDiag();}
+function backDiag(){if(step<=0)return;step--;answers.pop();renderDiag();}
 function resetDiag(){step=0;answers=[];renderDiag();}
 
 const quiz=[

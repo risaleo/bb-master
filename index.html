@@ -16,7 +16,7 @@
     <div class="brandmark">BB</div>
     <div><b>BBマスター</b><span>Broadband Sales Navigator</span></div>
   </div>
-  <div class="version">Ver.3.1</div>
+  <div class="version">Ver.3.2</div>
 </header>
 
 <main>
@@ -62,6 +62,7 @@
     <button class="feature f14" onclick="go('billCheck')"><span class="ico">▤</span><b>請求書チェック</b><small>どこを見るか図解</small></button>
     <button class="feature f15" onclick="go('salesMode')"><span class="ico">▶</span><b>接客モード</b><small>最初から最後まで案内</small></button>
     <button class="feature f16" onclick="go('mustCheck')"><span class="ico">!</span><b>絶対確認</b><small>見落とし防止チェック</small></button>
+    <button class="feature f17" onclick="go('pictureGuide')"><span class="ico">▣</span><b>絵でわかるBB</b><small>工事・機器を絵で理解</small></button>
   </div>
 
   <section class="card today">
@@ -234,7 +235,7 @@
 <section id="construction" class="page">
   <div class="page-title"><button onclick="go('home')">←</button><div><span>新人さんが一番イメージしづらい所</span><h2>光回線の工事マスター</h2></div></div>
 
-  <section class="construction-hero card">
+  <section class="construction-gallery card"><div class="visual-title"><span>まず絵で見る</span><h3>工事のイメージ</h3></div><div class="construction-gallery-grid"><button onclick="go('pictureGuide')"><img src="ill-house-fiber.png"><b>戸建工事</b><span>外から家へ</span></button><button onclick="go('pictureGuide')"><img src="ill-apartment.png"><b>集合住宅</b><span>建物設備から部屋へ</span></button><button onclick="go('pictureGuide')"><img src="ill-home-router.png"><b>工事なし</b><span>ホームルーター</span></button></div></section><section class="construction-hero card">
     <div>
       <span class="label">まず全体像</span>
       <h3>光回線は「外 → 建物 → 部屋 → ONU → Wi‑Fi」の順</h3>
@@ -1119,7 +1120,7 @@
     </div>
   </section>
 
-  <div class="sales-progress"><i id="salesProgressBar" style="width:14%"></i></div>
+  <section class="sales-picture card"><img src="ill-sales-journey.png"><div><b>順番を固定すると迷いにくい</b><span>聞く → 分ける → 確認 → 費用 → 提案</span></div></section><div class="sales-progress"><i id="salesProgressBar" style="width:14%"></i></div>
   <section id="salesModeCard" class="salesmode-card card"></section>
 </section>
 
@@ -1157,6 +1158,7 @@
   </section>
 </section>
 
+<section id="pictureGuide" class="page"><div class="page-title"><button onclick="go('home')">←</button><div><span>文章より先に見る</span><h2>絵でわかるBB</h2></div></div><section class="card picture-intro"><span class="label">新人さん向け</span><h3>まず絵を見る → あとで言葉を読む</h3><p>光回線の工事や機器は、どこからどこへつながるかを絵で見る方が覚えやすい。</p></section><section class="picture-card card"><div class="picture-title"><span>01</span><div><h3>戸建の光回線工事</h3><p>外の回線設備から家の中まで、一本の流れで考える。</p></div></div><img src="ill-house-fiber.png" alt="戸建の光回線工事"><div class="picture-points"><span>外から引込</span><span>室内へ配線</span><span>光コンセント</span><span>ONU</span><span>Wi‑Fi</span></div></section><section class="picture-card card"><div class="picture-title"><span>02</span><div><h3>集合住宅の工事</h3><p>マンションは「建物設備 → 共用部 → お客様宅」で考える。</p></div></div><img src="ill-apartment.png" alt="集合住宅の工事"><div class="picture-points"><span>建物対応確認</span><span>MDF等</span><span>各戸までの設備</span><span>室内機器</span></div></section><section class="picture-card card"><div class="picture-title"><span>03</span><div><h3>ホームルーター</h3><p>光ファイバーではなく、基地局の電波を家で受ける。</p></div></div><img src="ill-home-router.png" alt="ホームルーター"><div class="picture-points"><span>光工事なし</span><span>電波を受信</span><span>Wi‑Fi化</span><span>住所・電波確認</span></div></section><section class="picture-card card"><div class="picture-title"><span>04</span><div><h3>電話・TV・工事はセットで確認</h3><p>ネットだけ先に決めると、あとから手続きが増えやすい。</p></div></div><img src="ill-phone-tv.png" alt="電話・TV・工事はセットで確認"><div class="picture-points"><span>電話番号維持</span><span>TV視聴方法</span><span>工事条件</span><span>最終提案</span></div></section><section class="picture-card card"><div class="picture-title"><span>05</span><div><h3>接客の流れ</h3><p>全部を覚えるのではなく、確認する順番を固定する。</p></div></div><img src="ill-sales-journey.png" alt="接客の流れ"></section><section class="card"><h3 class="mini-title">絵を見たあとに覚える一言</h3><div class="picture-memory"><div><b>戸建</b><span>「外 → 家 → ONU → Wi‑Fi」</span></div><div><b>集合住宅</b><span>「建物設備 → 共用部 → 部屋」</span></div><div><b>ホームルーター</b><span>「基地局 → 家 → Wi‑Fi」</span></div><div><b>接客</b><span>「聞く → 確認 → 費用 → 提案」</span></div></div></section></section>
 <section id="basics" class="page">
   <div class="page-title"><button onclick="go('home')">←</button><div><span>新人さん向け</span><h2>超基礎を図で覚える</h2></div></div>
   <div class="basic-grid">
@@ -1224,6 +1226,7 @@
   <button onclick="go('billCheck')"><span>▤</span>請求</button>
   <button onclick="go('salesMode')"><span>▶</span>接客</button>
   <button onclick="go('mustCheck')"><span>!</span>確認</button>
+  <button onclick="go('pictureGuide')"><span>▣</span>絵図</button>
 </nav>
 </div>
 <script src="app.js"></script>

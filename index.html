@@ -16,7 +16,7 @@
     <div class="brandmark">BB</div>
     <div><b>BBマスター</b><span>Broadband Sales Navigator</span></div>
   </div>
-  <div class="version">Ver.2.1</div>
+  <div class="version">Ver.2.2</div>
 </header>
 
 <main>
@@ -52,6 +52,7 @@
     <button class="feature f4" onclick="go('phone')"><span class="ico">☎</span><b>電話・TV</b><small>見落としやすい確認点</small></button>
     <button class="feature f5" onclick="go('basics')"><span class="ico">✦</span><b>超基礎</b><small>1G・10G・光コラボ</small></button>
     <button class="feature f6" onclick="go('quiz')"><span class="ico">✓</span><b>接客問題</b><small>実践形式で覚える</small></button>
+    <button class="feature f7" onclick="go('construction')"><span class="ico">⌂</span><b>工事マスター</b><small>戸建・集合・宅内を図解</small></button>
   </div>
 
   <section class="card today">
@@ -169,6 +170,143 @@
   </div>
 </section>
 
+
+<section id="construction" class="page">
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>新人さんが一番イメージしづらい所</span><h2>光回線の工事マスター</h2></div></div>
+
+  <section class="construction-hero card">
+    <div>
+      <span class="label">まず全体像</span>
+      <h3>光回線は「外 → 建物 → 部屋 → ONU → Wi‑Fi」の順</h3>
+      <p>工事の説明は、細かい料金より先に「どこまで線が来ているか」を考えると分かりやすい。</p>
+    </div>
+    <div class="fiber-flow">
+      <div class="pole"><span>電柱・回線設備</span><b>光</b></div><i>→</i>
+      <div class="building"><span>建物</span><b>引込</b></div><i>→</i>
+      <div class="room"><span>室内</span><b>光コンセント</b></div><i>→</i>
+      <div class="onu"><span>ONU</span><b>光→通信</b></div><i>→</i>
+      <div class="router"><span>ルーター</span><b>Wi‑Fi</b></div>
+    </div>
+  </section>
+
+  <section class="construction-grid">
+    <article class="card work-card">
+      <div class="work-icon">🏠</div>
+      <h3>戸建の新規工事</h3>
+      <div class="mini-diagram">
+        <div class="outside">電柱</div><i>━━</i><div class="house">家</div><i>→</i><div class="inside">光コンセント</div>
+      </div>
+      <ol>
+        <li><b>外から建物へ</b> 光ファイバーを引き込む</li>
+        <li><b>宅内へ</b> 配管や既存の穴などを使って配線</li>
+        <li><b>室内</b> 光コンセント・ONUなどを設置</li>
+        <li><b>開通確認</b> 通信できることを確認</li>
+      </ol>
+      <div class="work-note">建物状況によって穴あけ・配線方法などが変わるため、店頭で施工方法を断定しない。</div>
+    </article>
+
+    <article class="card work-card">
+      <div class="work-icon">🏢</div>
+      <h3>集合住宅の新規工事</h3>
+      <div class="apartment">
+        <div class="mdf">共用部<br><b>MDF等</b></div>
+        <i>→</i>
+        <div class="floor">各階設備</div>
+        <i>→</i>
+        <div class="unit">お客様宅</div>
+      </div>
+      <ol>
+        <li><b>建物が対応しているか</b>を確認</li>
+        <li>共用部から部屋までの設備状況を確認</li>
+        <li>光配線方式など、建物設備に応じて開通</li>
+        <li>管理会社・オーナー確認が必要になる場合もある</li>
+      </ol>
+      <div class="work-note">「マンションだから必ず簡単工事」とは限らない。住所・部屋番号で提供状況を確認。</div>
+    </article>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">工事がどうなる？ 4パターンで覚える</h3>
+    <div class="work-patterns">
+      <div class="pattern p-new"><span>①</span><b>新規工事</b><p>回線設備を新しく引く。訪問工事になることがある。</p></div>
+      <div class="pattern p-reuse"><span>②</span><b>既存設備を利用</b><p>以前の光設備が使える場合は、工事内容が軽くなることがある。</p></div>
+      <div class="pattern p-remote"><span>③</span><b>無派遣 / 工事なし</b><p>設備状況によって訪問なしで切替できる場合がある。</p></div>
+      <div class="pattern p-home"><span>④</span><b>ホームルーター</b><p>光回線工事は不要。電波・登録住所・端末条件を確認。</p></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">当日の流れ</h3>
+    <div class="day-flow">
+      <div><span>1</span><b>作業員訪問</b><small>工事内容確認</small></div><i>→</i>
+      <div><span>2</span><b>引込・配線</b><small>建物状況に合わせる</small></div><i>→</i>
+      <div><span>3</span><b>ONU設置</b><small>光信号を通信へ</small></div><i>→</i>
+      <div><span>4</span><b>開通確認</b><small>通信確認</small></div><i>→</i>
+      <div><span>5</span><b>Wi‑Fi設定</b><small>ルーター接続</small></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">ONU・ルーター・ホームルーターの違い</h3>
+    <div class="device-compare">
+      <div class="device">
+        <div class="devpic onu-pic">光</div>
+        <b>ONU</b>
+        <p>光ファイバーの信号を、家庭内で使える通信に変換する機器。</p>
+      </div>
+      <div class="device">
+        <div class="devpic router-pic">)))</div>
+        <b>Wi‑Fiルーター</b>
+        <p>ONUなどにつないで、スマホやPCへ有線・無線で分配する。</p>
+      </div>
+      <div class="device">
+        <div class="devpic home-pic">5G</div>
+        <b>ホームルーター</b>
+        <p>モバイル回線を利用。光ファイバーを家へ引く工事は不要。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">電話・TVがあると確認が増える</h3>
+    <div class="option-flow">
+      <div class="internet-core"><b>インターネット</b></div>
+      <div class="plus">＋</div>
+      <div class="option-box"><b>固定電話</b><span>番号を残す？<br>発番元は？</span></div>
+      <div class="plus">＋</div>
+      <div class="option-box"><b>テレビ</b><span>光TV？<br>地デジ/BS？</span></div>
+      <div class="equals">＝</div>
+      <div class="confirm-box"><b>工事内容・手続き確認</b><span>ネットだけで決めない</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">1G → 10Gで新人さんが注意するところ</h3>
+    <div class="ten-gig">
+      <div class="gig old"><b>1G</b><span>現在</span></div><i>→</i>
+      <div class="gig check"><b>確認</b><span>提供エリア<br>機器<br>工事</span></div><i>→</i>
+      <div class="gig new"><b>10G</b><span>変更後</span></div>
+    </div>
+    <div class="work-note danger-note">「同じ会社の1G→10Gだから、必ず品目変更だけ」とは限らない。店頭資料で手続き方法と工事要否を確認。</div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">工事接客チェック 8項目</h3>
+    <div class="construction-check">
+      <label><input type="checkbox"> 戸建 / 集合住宅</label>
+      <label><input type="checkbox"> 現在の回線名</label>
+      <label><input type="checkbox"> 1G / 10G</label>
+      <label><input type="checkbox"> 光コンセントの有無</label>
+      <label><input type="checkbox"> 固定電話の有無</label>
+      <label><input type="checkbox"> TVサービスの有無</label>
+      <label><input type="checkbox"> 工事希望時期</label>
+      <label><input type="checkbox"> 最新工事費・条件を確認</label>
+    </div>
+  </section>
+
+  <section class="alert"><b>工事費は回線・プラン・建物・工事内容で変わります。</b><br>BBマスターでは工事の仕組みを理解し、最終金額は最新の店頭資料で確認する使い方にしています。</section>
+</section>
+
 <section id="basics" class="page">
   <div class="page-title"><button onclick="go('home')">←</button><div><span>新人さん向け</span><h2>超基礎を図で覚える</h2></div></div>
   <div class="basic-grid">
@@ -211,6 +349,7 @@
   <button onclick="go('diagnosis')"><span>◎</span>診断</button>
   <button onclick="go('compare')"><span>⇄</span>比較</button>
   <button onclick="go('procedure')"><span>↗</span>手続き</button>
+  <button onclick="go('construction')"><span>⌂</span>工事</button>
 </nav>
 </div>
 <script src="app.js"></script>

@@ -3,140 +3,181 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b5cff">
+<meta name="theme-color" content="#07152f">
 <title>BBマスター</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top">
-  <div>
-    <div class="eyebrow">新人さん向け・接客サポート</div>
-    <h1>BBマスター</h1>
-    <p>光回線・ホームルーターを「聞く → 比べる → 提案する」の順で覚える</p>
+<div class="app-shell">
+<header class="topbar">
+  <div class="brand">
+    <div class="brandmark">BB</div>
+    <div><b>BBマスター</b><span>Broadband Sales Navigator</span></div>
   </div>
-  <div class="ver">Ver. 1.0</div>
+  <div class="version">Ver.2.0</div>
 </header>
 
 <main>
-<section class="hero card">
-  <div>
-    <span class="pill">まずここ</span>
-    <h2>お客様に何を聞けばいい？</h2>
-    <p>難しい用語より先に、5つだけ確認。答えに沿っておすすめ候補を絞れます。</p>
-  </div>
-  <button class="primary" onclick="go('diagnosis')">かんたん接客診断</button>
-</section>
-
 <section id="home" class="page active">
-  <h2 class="section-title">基本メニュー</h2>
-  <div class="grid">
-    <button class="menu blue" onclick="go('diagnosis')"><b>① 接客診断</b><span>5つの質問で候補を整理</span></button>
-    <button class="menu green" onclick="go('compare')"><b>② 回線比較</b><span>7サービスを新人向けに比較</span></button>
-    <button class="menu orange" onclick="go('procedure')"><b>③ 手続き</b><span>新規・転用・事業者変更</span></button>
-    <button class="menu purple" onclick="go('phone-tv')"><b>④ 電話・TV</b><span>引継ぎと注意点</span></button>
-    <button class="menu cyan" onclick="go('glossary')"><b>⑤ 用語図解</b><span>1G・10G・IPv6など</span></button>
-    <button class="menu red" onclick="go('quiz')"><b>⑥ 練習問題</b><span>接客で迷うポイントを確認</span></button>
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="kicker">新人さん向け 接客ナビ</span>
+      <h1>光回線、<br><em>順番どおりなら難しくない。</em></h1>
+      <p>「何を聞けばいい？」から「何を提案する？」まで、売場でそのまま使える流れにしました。</p>
+      <button class="cta" onclick="go('diagnosis')">接客診断をはじめる <span>→</span></button>
+    </div>
+    <div class="hero-visual">
+      <div class="orb"></div>
+      <svg viewBox="0 0 420 300" role="img" aria-label="回線イメージ図">
+        <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#67e8f9"/><stop offset="1" stop-color="#6d7cff"/></linearGradient></defs>
+        <path d="M54 225 C120 112, 194 112, 258 225" fill="none" stroke="url(#g)" stroke-width="13" stroke-linecap="round" opacity=".9"/>
+        <path d="M92 225 C143 150, 178 150, 220 225" fill="none" stroke="url(#g)" stroke-width="13" stroke-linecap="round" opacity=".9"/>
+        <circle cx="157" cy="229" r="15" fill="#fff"/>
+        <rect x="118" y="218" width="78" height="42" rx="13" fill="#fff"/>
+        <circle cx="175" cy="239" r="4" fill="#1c52ff"/>
+        <path d="M282 87h78a18 18 0 0118 18v107a18 18 0 01-18 18h-78a18 18 0 01-18-18V105a18 18 0 0118-18z" fill="#fff" opacity=".98"/>
+        <rect x="291" y="105" width="60" height="74" rx="10" fill="#0f2043"/>
+        <path d="M301 195h40" stroke="#1c52ff" stroke-width="8" stroke-linecap="round"/>
+        <circle cx="321" cy="208" r="4" fill="#67e8f9"/>
+      </svg>
+    </div>
+  </section>
+
+  <div class="quick-grid">
+    <button class="feature f1" onclick="go('diagnosis')"><span class="ico">◎</span><b>接客診断</b><small>質問どおりに聞くだけ</small></button>
+    <button class="feature f2" onclick="go('compare')"><span class="ico">⇄</span><b>回線比較</b><small>7サービスを一気に整理</small></button>
+    <button class="feature f3" onclick="go('procedure')"><span class="ico">↗</span><b>手続き図解</b><small>新規・転用・事業者変更</small></button>
+    <button class="feature f4" onclick="go('phone')"><span class="ico">☎</span><b>電話・TV</b><small>見落としやすい確認点</small></button>
+    <button class="feature f5" onclick="go('basics')"><span class="ico">✦</span><b>超基礎</b><small>1G・10G・光コラボ</small></button>
+    <button class="feature f6" onclick="go('quiz')"><span class="ico">✓</span><b>接客問題</b><small>実践形式で覚える</small></button>
   </div>
 
-  <div class="card warning">
-    <h3>料金・キャンペーンについて</h3>
-    <p>還元額・月額・工事費・受付条件は変更されるため、店頭の最新資料を必ず確認してください。BBマスターでは「仕組み」と「確認順」を中心に表示します。</p>
-  </div>
+  <section class="card today">
+    <div>
+      <span class="label">新人さんはまずここだけ</span>
+      <h2>最初の5項目を聞けば、提案の8割が見える</h2>
+    </div>
+    <div class="five">
+      <span><b>1</b>今の回線</span><i>→</i>
+      <span><b>2</b>スマホ</span><i>→</i>
+      <span><b>3</b>戸建/集合</span><i>→</i>
+      <span><b>4</b>電話・TV</span><i>→</i>
+      <span><b>5</b>重視点</span>
+    </div>
+  </section>
+  <section class="notice">料金・還元・工事費・受付条件は変更があります。<b>最新の店頭資料を最終確認</b>して案内してください。</section>
 </section>
 
 <section id="diagnosis" class="page">
-  <div class="pagehead"><button class="back" onclick="go('home')">←</button><div><h2>かんたん接客診断</h2><p>上から順に聞けばOK</p></div></div>
-  <div class="step card"><span>1</span><div><h3>今のインターネットは？</h3><p>光回線 / ホームルーター / CATV / モバイルWi-Fi / なし</p></div></div>
-  <div class="step card"><span>2</span><div><h3>スマホはどこ？</h3><p>docomo / SoftBank / au / UQ / その他</p></div></div>
-  <div class="step card"><span>3</span><div><h3>戸建？集合住宅？</h3><p>住所によって提供可否・工事内容・料金体系が変わります。</p></div></div>
-  <div class="step card"><span>4</span><div><h3>固定電話・TVは使ってる？</h3><p>「使っている」だけでなく、番号を残したいか・TVを光回線経由で見ているかまで確認。</p></div></div>
-  <div class="step card"><span>5</span><div><h3>何を一番重視？</h3><p>料金 / 速度 / 工事したくない / スマホ割 / TV / 固定電話</p></div></div>
-
-  <div class="result card">
-    <h3>候補の出し方</h3>
-    <div class="chips">
-      <span>docomo中心 → ドコモ光 / home 5G</span>
-      <span>SoftBank中心 → SoftBank 光 / SoftBank Air</span>
-      <span>au・UQ中心 → auひかりも候補</span>
-      <span>速度重視 → NURO光も確認</span>
-      <span>工事NG → home 5G / SoftBank Air</span>
-      <span>グループ回線を提案 → @nifty光</span>
-    </div>
-    <p class="note">※最終提案は提供エリア・建物設備・最新キャンペーン・契約条件を確認して決定。</p>
-  </div>
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>接客ナビ</span><h2>お客様に順番に聞く</h2></div></div>
+  <div id="diagProgress" class="progress"><i style="width:20%"></i></div>
+  <div id="diagCard" class="diag-card"></div>
 </section>
 
 <section id="compare" class="page">
-  <div class="pagehead"><button class="back" onclick="go('home')">←</button><div><h2>回線比較</h2><p>「何が違うの？」を短く整理</p></div></div>
-  <div class="services">
-    <article class="service"><h3>ドコモ光</h3><div class="tag">光回線</div><p><b>向いている：</b>docomo利用者、固定回線をしっかり使いたい人。</p><p><b>確認：</b>1G/10G、提供エリア、固定電話・TV、転用/事業者変更の可否。</p></article>
-    <article class="service"><h3>SoftBank 光</h3><div class="tag">光回線</div><p><b>向いている：</b>SoftBank利用者、固定回線を希望する人。</p><p><b>確認：</b>1G/10G、光電話・TV、工事、乗り換え区分。</p></article>
-    <article class="service featured"><h3>@nifty光</h3><div class="tag">光回線</div><p><b>向いている：</b>ノジマ店頭で比較しながら案内したい人。</p><p><b>確認：</b>1G/10G、転用/事業者変更、新規工事、電話・TVの引継ぎ。</p></article>
-    <article class="service"><h3>auひかり</h3><div class="tag">独自回線</div><p><b>向いている：</b>au/UQ利用者、エリア内で速度・安定性も重視する人。</p><p><b>確認：</b>提供エリア、建物対応、固定電話、撤去・工事条件。</p></article>
-    <article class="service"><h3>NURO光</h3><div class="tag">独自回線</div><p><b>向いている：</b>速度重視、提供エリア内で工事可能な人。</p><p><b>確認：</b>戸建/マンション、提供エリア、工事回数・日程、旧プランとの違い。</p></article>
-    <article class="service"><h3>ドコモ home 5G</h3><div class="tag">ホームルーター</div><p><b>向いている：</b>工事を避けたい、早くWi-Fiを使いたいdocomo利用者。</p><p><b>確認：</b>登録住所、電波状況、端末代、固定回線との違い。</p></article>
-    <article class="service"><h3>SoftBank Air</h3><div class="tag">ホームルーター</div><p><b>向いている：</b>工事を避けたいSoftBank利用者。</p><p><b>確認：</b>登録住所、電波状況、端末条件、固定回線との違い。</p></article>
-  </div>
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>7サービス比較</span><h2>「何が違う？」を一目で</h2></div></div>
+  <div class="legend"><span class="dot fiber"></span>光回線 <span class="dot independent"></span>独自回線 <span class="dot home"></span>ホームルーター</div>
+  <div id="serviceCards" class="service-grid"></div>
+  <section class="card compare-tip">
+    <h3>新人さん向け覚え方</h3>
+    <div class="memory">
+      <div><b>工事OK</b><span>光回線を中心に比較</span></div>
+      <div><b>工事NG</b><span>home 5G / SoftBank Air</span></div>
+      <div><b>速度重視</b><span>10G・独自回線も確認</span></div>
+      <div><b>電話・TVあり</b><span>先に引継ぎ条件を確認</span></div>
+    </div>
+  </section>
 </section>
 
 <section id="procedure" class="page">
-  <div class="pagehead"><button class="back" onclick="go('home')">←</button><div><h2>新規・転用・事業者変更</h2><p>ここを新人さんが一番迷いやすい</p></div></div>
-  <div class="flow">
-    <div class="flowbox"><b>新規</b><span>今の回線を引き継がず、新しく契約</span></div>
-    <div class="arrow">↓</div>
-    <div class="flowbox"><b>転用</b><span>フレッツ光 → 光コラボへ移行</span></div>
-    <div class="arrow">↓</div>
-    <div class="flowbox"><b>事業者変更</b><span>光コラボ → 別の光コラボへ移行</span></div>
-  </div>
-  <div class="card">
-    <h3>接客時の確認順</h3>
-    <ol class="check">
-      <li>現在の回線名を確認</li>
-      <li>1G / 10Gを確認</li>
-      <li>固定電話・TVの利用有無を確認</li>
-      <li>番号を残したいか確認</li>
-      <li>転用承諾番号 / 事業者変更承諾番号が必要か確認</li>
-      <li>その組み合わせが移行可能か最新一覧表で確認</li>
-    </ol>
-  </div>
-  <div class="card danger"><h3>注意</h3><p>「同じ光だからそのまま移れる」と決めつけない。1G→10G、電話・TVオプション、回線種別によって手続きが変わる場合があります。</p></div>
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>一番つまずく所</span><h2>新規・転用・事業者変更</h2></div></div>
+  <section class="diagram card">
+    <div class="route">
+      <div class="node ntt"><small>NTT</small><b>フレッツ光</b></div>
+      <div class="route-arrow"><span>転用</span>→</div>
+      <div class="node collab"><small>光コラボ</small><b>ドコモ光 / @nifty光<br>SoftBank 光 など</b></div>
+    </div>
+    <div class="route second">
+      <div class="node collab"><small>光コラボ A</small><b>現在の回線</b></div>
+      <div class="route-arrow"><span>事業者変更</span>→</div>
+      <div class="node collab"><small>光コラボ B</small><b>乗り換え先</b></div>
+    </div>
+    <div class="route">
+      <div class="node blank"><small>回線なし / 独自回線など</small><b>新しく契約</b></div>
+      <div class="route-arrow"><span>新規</span>→</div>
+      <div class="node new"><small>新しい回線</small><b>工事・開通へ</b></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">判断フロー</h3>
+    <div class="tree">
+      <div class="qbox">今の回線は？</div><div class="down">↓</div>
+      <div class="branches">
+        <div><b>フレッツ光</b><span>→ 転用の可能性</span></div>
+        <div><b>光コラボ</b><span>→ 事業者変更の可能性</span></div>
+        <div><b>その他 / なし</b><span>→ 新規の可能性</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="alert"><b>ここで断定しない！</b><br>1G / 10G、電話、TV、現在の契約種別で手続きが変わる場合があります。資料で組み合わせを確認。</section>
 </section>
 
-<section id="phone-tv" class="page">
-  <div class="pagehead"><button class="back" onclick="go('home')">←</button><div><h2>固定電話・TV</h2><p>ネットだけ見て決めない</p></div></div>
-  <div class="two">
-    <div class="card"><h3>☎ 固定電話</h3><p><b>必ず聞く：</b>現在の電話サービス / 電話番号を残したいか / 発番元 / オプション。</p><p>番号の引継ぎ可否は条件で変わるため、資料・カスタマーセンターで確認。</p></div>
-    <div class="card"><h3>▣ TV</h3><p><b>必ず聞く：</b>光テレビを使っているか / 地デジだけか / BS・専門チャンネルも必要か。</p><p>回線変更でTVの工事や視聴方法が変わる可能性があります。</p></div>
+<section id="phone" class="page">
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>見落とし防止</span><h2>固定電話・TV・工事</h2></div></div>
+  <div class="triple">
+    <article class="topic card"><div class="topic-icon">☎</div><h3>固定電話</h3><ol><li>今の電話サービス</li><li>番号を残したい？</li><li>発番元は？</li><li>オプション利用は？</li></ol><div class="warn">番号引継ぎは条件で変わる</div></article>
+    <article class="topic card"><div class="topic-icon">▣</div><h3>テレビ</h3><ol><li>光TVを使ってる？</li><li>地デジだけ？</li><li>BS / 専門CHは？</li><li>回線変更後も必要？</li></ol><div class="warn">TV工事が変わる場合あり</div></article>
+    <article class="topic card"><div class="topic-icon">⌁</div><h3>工事</h3><ol><li>戸建 / 集合住宅</li><li>工事できる？</li><li>提供エリア</li><li>開通希望時期</li></ol><div class="warn">建物設備で条件が変わる</div></article>
   </div>
 </section>
 
-<section id="glossary" class="page">
-  <div class="pagehead"><button class="back" onclick="go('home')">←</button><div><h2>用語図解</h2><p>新人さん向けに一言で</p></div></div>
-  <div class="gloss">
-    <div class="card"><h3>1G / 10G</h3><p>契約上の最大通信速度のプラン区分。10Gは対応エリア・機器・配線条件も確認。</p></div>
-    <div class="card"><h3>光コラボ</h3><p>NTTの光回線設備を使い、各事業者が自社サービスとして提供する仕組み。</p></div>
-    <div class="card"><h3>転用</h3><p>フレッツ光から光コラボへ移る手続き。</p></div>
-    <div class="card"><h3>事業者変更</h3><p>光コラボから別の光コラボへ移る手続き。</p></div>
-    <div class="card"><h3>ホームルーター</h3><p>回線工事をせず、モバイル回線を使って家のWi-Fiを作る機器。</p></div>
-    <div class="card"><h3>独自回線</h3><p>フレッツ系とは異なる設備・提供方式を使う回線。エリアと工事条件の確認が重要。</p></div>
+<section id="basics" class="page">
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>新人さん向け</span><h2>超基礎を図で覚える</h2></div></div>
+  <div class="basic-grid">
+    <article class="basic card">
+      <h3>1G と 10G</h3>
+      <div class="speed">
+        <div><span style="width:32%"></span><b>1G</b></div>
+        <div><span style="width:92%"></span><b>10G</b></div>
+      </div>
+      <p>「数字が大きい＝誰でも必ず速い」ではありません。提供エリア、宅内機器、Wi-Fi、端末なども影響します。</p>
+    </article>
+    <article class="basic card">
+      <h3>光回線 と ホームルーター</h3>
+      <div class="split">
+        <div><div class="wire">━━●</div><b>光回線</b><span>工事あり<br>固定回線</span></div>
+        <div><div class="wifi">)))</div><b>ホームルーター</b><span>工事不要<br>モバイル回線</span></div>
+      </div>
+    </article>
+    <article class="basic card">
+      <h3>光コラボとは？</h3>
+      <div class="collab-fig"><div>NTT回線設備</div><i>＋</i><div>各事業者のサービス</div><i>＝</i><strong>光コラボ</strong></div>
+      <p>ドコモ光、@nifty光、SoftBank 光などを考えるときの基本。</p>
+    </article>
+    <article class="basic card">
+      <h3>独自回線とは？</h3>
+      <div class="indie"><span>フレッツ系</span><i>≠</i><strong>auひかり / NURO光</strong></div>
+      <p>提供エリアや工事条件が光コラボとは異なるため、乗り換え時は特に確認。</p>
+    </article>
   </div>
 </section>
 
 <section id="quiz" class="page">
-  <div class="pagehead"><button class="back" onclick="go('home')">←</button><div><h2>練習問題</h2><p>まずは5問</p></div></div>
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>接客トレーニング</span><h2>新人さん向け実践問題</h2></div></div>
   <div id="quizbox"></div>
 </section>
 </main>
 
-<nav class="bottom">
-  <button onclick="go('home')">ホーム</button>
-  <button onclick="go('diagnosis')">診断</button>
-  <button onclick="go('compare')">比較</button>
-  <button onclick="go('glossary')">用語</button>
+<nav class="nav">
+  <button onclick="go('home')"><span>⌂</span>ホーム</button>
+  <button onclick="go('diagnosis')"><span>◎</span>診断</button>
+  <button onclick="go('compare')"><span>⇄</span>比較</button>
+  <button onclick="go('procedure')"><span>↗</span>手続き</button>
 </nav>
-
+</div>
 <script src="app.js"></script>
 </body>
 </html>

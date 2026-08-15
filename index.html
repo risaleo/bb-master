@@ -16,7 +16,7 @@
     <div class="brandmark">BB</div>
     <div><b>BBマスター</b><span>Broadband Sales Navigator</span></div>
   </div>
-  <div class="version">Ver.2.4</div>
+  <div class="version">Ver.3.1</div>
 </header>
 
 <main>
@@ -55,6 +55,13 @@
     <button class="feature f7" onclick="go('construction')"><span class="ico">⌂</span><b>工事マスター</b><small>戸建・集合・宅内を図解</small></button>
     <button class="feature f8" onclick="go('scenario')"><span class="ico">☑</span><b>接客シナリオ</b><small>実際の案内例で覚える</small></button>
     <button class="feature f9" onclick="go('visuals')"><span class="ico">◈</span><b>図解ライブラリ</b><small>絵と図で一気に理解</small></button>
+    <button class="feature f10" onclick="go('serviceGuide')"><span class="ico">★</span><b>サービス攻略</b><small>7回線を1ページずつ</small></button>
+    <button class="feature f11" onclick="go('quickTable')"><span class="ico">▦</span><b>超早見表</b><small>違いを横並びで確認</small></button>
+    <button class="feature f12" onclick="go('fees')"><span class="ico">¥</span><b>工事費・費用</b><small>数字を図で確認</small></button>
+    <button class="feature f13" onclick="go('switchCost')"><span class="ico">↔</span><b>乗り換え費用</b><small>解約金・残債・特典を整理</small></button>
+    <button class="feature f14" onclick="go('billCheck')"><span class="ico">▤</span><b>請求書チェック</b><small>どこを見るか図解</small></button>
+    <button class="feature f15" onclick="go('salesMode')"><span class="ico">▶</span><b>接客モード</b><small>最初から最後まで案内</small></button>
+    <button class="feature f16" onclick="go('mustCheck')"><span class="ico">!</span><b>絶対確認</b><small>見落とし防止チェック</small></button>
   </div>
 
   <section class="card today">
@@ -71,6 +78,31 @@
     </div>
   </section>
   
+
+<section class="starter card">
+  <div class="starter-copy">
+    <span class="label">新人さんはここから</span>
+    <h2>迷ったら「3つ」だけ</h2>
+    <p>① 今の回線　② スマホ会社　③ 工事できるか。まずここまで聞けば候補を大きく絞れます。</p>
+  </div>
+  <div class="starter-actions">
+    <button onclick="go('salesMode')">接客モードを開く</button>
+    <button class="sub" onclick="go('quickTable')">超早見表を見る</button>
+  </div>
+</section>
+
+<section class="search-card card">
+  <div>
+    <span class="label">すぐ探す</span>
+    <h2>BBマスター内検索</h2>
+  </div>
+  <div class="search-wrap">
+    <input id="bbSearch" type="search" placeholder="例：転用、工事、固定電話、NURO">
+    <button onclick="runBBSearch()">検索</button>
+  </div>
+  <div id="searchResults" class="search-results"></div>
+</section>
+
 <section class="visual-guide card">
   <div class="visual-title"><span>図で覚える</span><h2>回線選びの全体像</h2></div>
   <div class="network-map">
@@ -78,6 +110,22 @@
     <div class="decision"><div><b>工事OK</b><span>光回線へ</span></div><div><b>工事NG</b><span>ホームルーターへ</span></div></div>
     <div class="map-arrow">→</div>
     <div class="targets"><div class="t-fiber">ドコモ光<br>SoftBank 光<br>@nifty光</div><div class="t-indie">auひかり<br>NURO光</div><div class="t-home">home 5G<br>SoftBank Air</div></div>
+  </div>
+</section>
+
+
+<section class="roadmap card">
+  <div class="visual-title"><span>学ぶ順番</span><h2>新人さんロードマップ</h2></div>
+  <div class="roadmap-grid">
+    <button onclick="go('basics')"><span>1</span><b>超基礎</b><small>光回線って何？</small></button>
+    <i>→</i>
+    <button onclick="go('procedure')"><span>2</span><b>手続き</b><small>新規・転用・事業者変更</small></button>
+    <i>→</i>
+    <button onclick="go('construction')"><span>3</span><b>工事</b><small>戸建・集合・機器</small></button>
+    <i>→</i>
+    <button onclick="go('serviceGuide')"><span>4</span><b>サービス</b><small>7回線の違い</small></button>
+    <i>→</i>
+    <button onclick="go('salesMode')"><span>5</span><b>接客実践</b><small>順番どおりに案内</small></button>
   </div>
 </section>
 
@@ -589,6 +637,526 @@
   </section>
 </section>
 
+
+<section id="serviceGuide" class="page">
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>1サービス1ページ</span><h2>7サービス攻略</h2></div></div>
+
+  <section class="card guide-intro">
+    <h3>新人さんは、この順番で見ればOK</h3>
+    <div class="guide-order">
+      <span>① 向いている人</span><i>→</i><span>② 何を聞く</span><i>→</i><span>③ 工事</span><i>→</i><span>④ 電話・TV</span><i>→</i><span>⑤ 注意</span>
+    </div>
+  </section>
+
+  <div class="service-selector">
+    <button onclick="showService('docomo')">ドコモ光</button>
+    <button onclick="showService('softbank')">SoftBank 光</button>
+    <button onclick="showService('nifty')">@nifty光</button>
+    <button onclick="showService('au')">auひかり</button>
+    <button onclick="showService('nuro')">NURO光</button>
+    <button onclick="showService('home5g')">home 5G</button>
+    <button onclick="showService('air')">SoftBank Air</button>
+  </div>
+
+  <div id="serviceDetail"></div>
+</section>
+
+
+<section id="quickTable" class="page">
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>接客中にすぐ見る</span><h2>7サービス 超早見表</h2></div></div>
+
+  <section class="card quick-how">
+    <h3>見る順番はこれだけ</h3>
+    <div class="quick-order">
+      <span>① 工事できる？</span><i>→</i>
+      <span>② スマホ会社</span><i>→</i>
+      <span>③ 電話・TV</span><i>→</i>
+      <span>④ 速度重視？</span><i>→</i>
+      <span>⑤ 手続き確認</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">まず大きく3種類</h3>
+    <div class="three-types">
+      <div class="typebox fiber"><b>光コラボ系</b><span>ドコモ光<br>SoftBank 光<br>@nifty光</span><small>フレッツ系設備を使う</small></div>
+      <div class="typebox independent"><b>独自回線系</b><span>auひかり<br>NURO光</span><small>エリア・工事条件を個別確認</small></div>
+      <div class="typebox homerouter"><b>ホームルーター</b><span>home 5G<br>SoftBank Air</span><small>光回線工事なし</small></div>
+    </div>
+  </section>
+
+  <section class="card table-card">
+    <h3 class="mini-title">比較早見表</h3>
+    <div class="table-scroll">
+      <table class="bb-table">
+        <thead>
+          <tr>
+            <th>サービス</th>
+            <th>種類</th>
+            <th>工事</th>
+            <th>1G/10G</th>
+            <th>電話</th>
+            <th>TV</th>
+            <th>転用</th>
+            <th>事業者変更</th>
+            <th>向いている人</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th>ドコモ光</th><td><span class="badge b-fiber">光コラボ</span></td><td>ありの場合</td><td>確認</td><td>確認</td><td>確認</td><td>可能性あり</td><td>可能性あり</td><td>docomo利用＋固定回線</td></tr>
+          <tr><th>SoftBank 光</th><td><span class="badge b-fiber">光コラボ</span></td><td>ありの場合</td><td>確認</td><td>確認</td><td>確認</td><td>可能性あり</td><td>可能性あり</td><td>SoftBank利用＋固定回線</td></tr>
+          <tr><th>@nifty光</th><td><span class="badge b-fiber">光コラボ</span></td><td>ありの場合</td><td>確認</td><td>確認</td><td>確認</td><td>可能性あり</td><td>可能性あり</td><td>店頭比較＋固定回線</td></tr>
+          <tr><th>auひかり</th><td><span class="badge b-independent">独自回線</span></td><td>要確認</td><td>プラン確認</td><td>確認</td><td>確認</td><td>―</td><td>―</td><td>au/UQ＋エリア内</td></tr>
+          <tr><th>NURO光</th><td><span class="badge b-independent">独自回線</span></td><td>要確認</td><td>プラン確認</td><td>確認</td><td>確認</td><td>―</td><td>―</td><td>速度重視＋エリア内</td></tr>
+          <tr><th>home 5G</th><td><span class="badge b-home">ホームルーター</span></td><td><b class="ok-text">光工事なし</b></td><td>―</td><td>別途確認</td><td>―</td><td>―</td><td>―</td><td>docomo＋工事NG</td></tr>
+          <tr><th>SoftBank Air</th><td><span class="badge b-home">ホームルーター</span></td><td><b class="ok-text">光工事なし</b></td><td>―</td><td>別途確認</td><td>―</td><td>―</td><td>―</td><td>SoftBank＋工事NG</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small-note">※「可能性あり」「確認」は、現在回線・プラン・建物・電話/TV利用状況で変わるため、最終的に最新資料で確認。</p>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">工事だけで見ると</h3>
+    <div class="construction-lanes">
+      <div class="lane">
+        <div class="lane-title l-blue">工事できる</div>
+        <div class="lane-items">
+          <span>ドコモ光</span><span>SoftBank 光</span><span>@nifty光</span><span>auひかり</span><span>NURO光</span>
+        </div>
+      </div>
+      <div class="lane">
+        <div class="lane-title l-green">工事したくない</div>
+        <div class="lane-items">
+          <span>home 5G</span><span>SoftBank Air</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">乗り換えだけで見ると</h3>
+    <div class="change-visual">
+      <div class="change-row"><div class="from">フレッツ光</div><i>→</i><div class="how">転用の可能性</div><i>→</i><div class="to">光コラボ</div></div>
+      <div class="change-row"><div class="from">光コラボ</div><i>→</i><div class="how">事業者変更の可能性</div><i>→</i><div class="to">別の光コラボ</div></div>
+      <div class="change-row"><div class="from">独自回線 / その他</div><i>→</i><div class="how">新規の可能性</div><i>→</i><div class="to">新しい回線</div></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">電話・TVありのお客様</h3>
+    <div class="phone-tv-fast">
+      <div><span>☎</span><b>固定電話あり</b><small>番号を残す？ 発番元は？</small></div>
+      <div><span>▣</span><b>TVあり</b><small>光TV？ 地デジ？ BS？</small></div>
+      <div><span>⚠</span><b>両方あり</b><small>ネットより先に引継ぎ条件も確認</small></div>
+    </div>
+  </section>
+
+  <section class="alert"><b>この早見表は「候補を絞るため」のもの。</b><br>最終案内では、提供エリア・建物・1G/10G・工事・電話・TV・料金・キャンペーン・受付条件を最新資料で確認してください。</section>
+</section>
+
+
+<section id="fees" class="page">
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>提供資料 2026-05版を反映</span><h2>工事費・費用マスター</h2></div></div>
+
+  <section class="card money-intro">
+    <div>
+      <span class="label">新人さん向け</span>
+      <h3>金額は「ネット → 電話 → TV」の順で見る</h3>
+      <p>最初から全部足そうとすると混乱するので、まずネット工事、そのあと電話・TVの有無を追加で確認。</p>
+    </div>
+    <div class="money-flow">
+      <div><b>ネット</b><span>基本工事</span></div><i>＋</i>
+      <div><b>電話</b><span>使う場合</span></div><i>＋</i>
+      <div><b>TV</b><span>使う場合</span></div><i>＝</i>
+      <div class="sum"><b>総額</b><span>最新資料で確認</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">新規：ネット工事費</h3>
+    <div class="fee-cards">
+      <article class="fee-card fc-nifty">
+        <h4>@nifty光</h4>
+        <div class="price-row"><span>事務手数料</span><b>3,300円</b></div>
+        <div class="price-main"><small>派遣工事</small><strong>22,000円</strong></div>
+        <div class="price-sub">無派遣工事：3,300円</div>
+      </article>
+      <article class="fee-card fc-docomo">
+        <h4>ドコモ光</h4>
+        <div class="price-row"><span>事務手数料</span><b>4,950円</b></div>
+        <div class="price-main"><small>派遣工事</small><strong>28,600円</strong></div>
+        <div class="price-sub">無派遣工事：3,300円</div>
+      </article>
+      <article class="fee-card fc-sb">
+        <h4>SoftBank 光</h4>
+        <div class="price-row"><span>事務手数料</span><b>4,950円</b></div>
+        <div class="price-main"><small>派遣工事</small><strong>47,520円</strong></div>
+        <div class="price-sub">無派遣工事：5,280円</div>
+      </article>
+    </div>
+    <div class="money-warning">※別途追加工事が発生する場合あり。建物・工事内容・申込条件で変わるため、最終確認は最新資料。</div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">電話工事の見方</h3>
+    <div class="phone-money-map">
+      <div class="pm-start"><b>固定電話あり？</b></div><i>→</i>
+      <div class="pm-check"><b>どのパターン？</b><span>新規発番 / 他社から / アナログから</span></div><i>→</i>
+      <div class="pm-price"><b>料金確認</b><span>回線・1G/10Gで確認</span></div>
+    </div>
+
+    <div class="mini-fee-grid">
+      <div class="mini-fee">
+        <h4>@nifty光</h4>
+        <p><span>新規発番</span><b>1,100円〜2,750円</b></p>
+        <p><span>他社コラボ等</span><b>3,300円〜4,950円</b></p>
+        <p><span>アナログから</span><b>6,600円〜8,250円</b></p>
+      </div>
+      <div class="mini-fee">
+        <h4>ドコモ光</h4>
+        <p><span>新規発番</span><b>1G 1,100円 / 10G 2,750円</b></p>
+        <p><span>他社コラボ等</span><b>1G 3,300円 / 10G 4,950円</b></p>
+        <p><span>アナログから</span><b>1G 6,600円 / 10G 8,250円</b></p>
+      </div>
+      <div class="mini-fee">
+        <h4>SoftBank 光</h4>
+        <p><span>新規発番</span><b>1,100円</b></p>
+        <p><span>他社コラボ等</span><b>3,300円</b></p>
+        <p><span>アナログから</span><b>6,600円</b></p>
+      </div>
+    </div>
+    <p class="small-note">※電話の発番元・番号引継ぎ条件で扱いが変わるため、料金だけで判断しない。</p>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">TV工事費の目安</h3>
+    <div class="tv-fee-visual">
+      <div class="tvfee nifty"><b>@nifty光</b><strong>29,810円〜</strong><span>ネット＋TV / 派遣工事</span></div>
+      <div class="tvfee docomo"><b>ドコモ光</b><strong>26,180円〜</strong><span>ネット＋TV / 派遣工事</span></div>
+      <div class="tvfee sb"><b>SoftBank 光</b><strong>32,780円〜</strong><span>ネット＋TV / 派遣工事</span></div>
+    </div>
+    <div class="tv-extra">SoftBank 光：ネット無派遣＋TV派遣のケースは <b>41,030円〜</b> の記載あり。</div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">事業者変更で工事が必要になる？</h3>
+    <div class="change-work">
+      <div class="cwq"><b>今と同じ品目？</b><span>例：1G → 1G</span></div>
+      <i>→</i>
+      <div class="cwcase">
+        <div><b>同じ</b><span>工事なしになるケースあり</span></div>
+        <div><b>違う</b><span>1G↔10Gなどは工事・品目変更を確認</span></div>
+      </div>
+      <i>→</i>
+      <div class="cwfinal"><b>最新一覧で確認</b><span>電話・TVも忘れずに</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">新人さん向け 金額説明の順番</h3>
+    <div class="explain-money">
+      <div><span>1</span><b>基本工事</b><small>まずネットだけ</small></div><i>→</i>
+      <div><span>2</span><b>電話</b><small>使うなら追加確認</small></div><i>→</i>
+      <div><span>3</span><b>TV</b><small>使うなら追加確認</small></div><i>→</i>
+      <div><span>4</span><b>追加工事</b><small>建物・日程など</small></div><i>→</i>
+      <div><span>5</span><b>最終金額</b><small>最新資料</small></div>
+    </div>
+  </section>
+
+  <section class="alert">
+    <b>このページの数字は、送ってもらった「2026-05 各種工事費一覧」資料をもとに作成。</b><br>
+    料金・キャンペーン・工事条件は変更されるため、接客時は最新資料を優先してください。
+  </section>
+</section>
+
+
+<section id="switchCost" class="page">
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>損を出さないための確認</span><h2>乗り換え費用マスター</h2></div></div>
+
+  <section class="card cost-hero">
+    <div>
+      <span class="label">新人さん向け</span>
+      <h3>「月額が安い」だけで乗り換えを決めない</h3>
+      <p>乗り換え時は、解約金だけでなく <b>端末残債・工事費残債・撤去費・オプション</b> まで確認。</p>
+    </div>
+    <div class="cost-formula">
+      <div class="cf-box oldcost"><b>今の回線で払う</b><span>解約金<br>残債<br>撤去費</span></div>
+      <i>−</i>
+      <div class="cf-box benefit"><b>新回線の特典</b><span>還元<br>サポート</span></div>
+      <i>＝</i>
+      <div class="cf-box burden"><b>実質負担</b><span>ここを見る</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">解約時に確認する5項目</h3>
+    <div class="five-costs">
+      <div><span>1</span><b>解約金</b><small>契約解除料</small></div>
+      <div><span>2</span><b>端末残債</b><small>ホームルーター等</small></div>
+      <div><span>3</span><b>工事費残債</b><small>分割残り</small></div>
+      <div><span>4</span><b>撤去費</b><small>回線により確認</small></div>
+      <div><span>5</span><b>オプション</b><small>電話・TV等</small></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">ホームルーターで特に注意</h3>
+    <div class="router-cost-compare">
+      <div class="router-cost docomo-r">
+        <div class="router-visual">5G</div>
+        <h4>ドコモ home 5G</h4>
+        <ul>
+          <li>光回線工事は不要</li>
+          <li><b>端末代・残債</b>を確認</li>
+          <li>登録住所・利用場所を確認</li>
+          <li>解約時も端末残債に注意</li>
+        </ul>
+      </div>
+      <div class="router-cost sb-r">
+        <div class="router-visual">Air</div>
+        <h4>SoftBank Air</h4>
+        <ul>
+          <li>光回線工事は不要</li>
+          <li><b>端末購入 / レンタル条件</b>を確認</li>
+          <li>電波状況を確認</li>
+          <li>解約時の端末残債に注意</li>
+        </ul>
+      </div>
+    </div>
+    <div class="money-warning">ホームルーターは「工事がない＝解約時の負担もない」ではありません。端末代の残りを必ず確認。</div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">キャンペーンは3種類に分けると簡単</h3>
+    <div class="campaign-types">
+      <div class="camp c-now"><span>①</span><b>即時還元</b><small>その場で家電値引きなど</small></div>
+      <div class="camp c-later"><span>②</span><b>後日還元</b><small>開通後・条件達成後</small></div>
+      <div class="camp c-support"><span>③</span><b>乗り換え支援</b><small>解約金等サポート</small></div>
+    </div>
+    <p class="small-note">※対象商品・申込条件・受取時期・オプション条件は変わるため、最新資料を優先。</p>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">キャンペーン説明で必ず伝えること</h3>
+    <div class="campaign-check">
+      <label><input type="checkbox"> 対象サービス</label>
+      <label><input type="checkbox"> 対象プラン</label>
+      <label><input type="checkbox"> 対象商品 / 家電条件</label>
+      <label><input type="checkbox"> 必須オプション</label>
+      <label><input type="checkbox"> 開通期限</label>
+      <label><input type="checkbox"> 還元時期</label>
+      <label><input type="checkbox"> 申請の有無</label>
+      <label><input type="checkbox"> 解約時の注意</label>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">乗り換え費用かんたん計算</h3>
+    <div class="calc-grid">
+      <label>解約金<input id="cancelFee" inputmode="numeric" placeholder="0"></label>
+      <label>端末残債<input id="deviceBalance" inputmode="numeric" placeholder="0"></label>
+      <label>工事費残債<input id="workBalance" inputmode="numeric" placeholder="0"></label>
+      <label>撤去・その他<input id="otherCost" inputmode="numeric" placeholder="0"></label>
+      <label>即時還元<input id="instantBenefit" inputmode="numeric" placeholder="0"></label>
+      <label>後日還元<input id="laterBenefit" inputmode="numeric" placeholder="0"></label>
+    </div>
+    <button class="calc-btn" onclick="calcSwitchCost()">実質負担を計算</button>
+    <div id="costResult" class="cost-result">
+      <small>実質負担</small>
+      <strong>0円</strong>
+      <span>解約金＋残債＋その他 − 還元</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">新人さん向け 接客フロー</h3>
+    <div class="switch-flow">
+      <div><span>1</span><b>今の回線</b><small>何を使ってる？</small></div><i>→</i>
+      <div><span>2</span><b>解約負担</b><small>残債まで確認</small></div><i>→</i>
+      <div><span>3</span><b>新回線特典</b><small>条件・時期確認</small></div><i>→</i>
+      <div><span>4</span><b>実質負担</b><small>比較する</small></div><i>→</i>
+      <div><span>5</span><b>提案</b><small>理由を説明</small></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">よくある失敗</h3>
+    <div class="mistake-grid">
+      <div class="mistake"><b>× 解約金だけ見る</b><span>端末残債・工事費残債を見落とす</span></div>
+      <div class="mistake"><b>× 還元額だけ伝える</b><span>受取時期・申請・条件を伝えない</span></div>
+      <div class="mistake"><b>× 工事不要だから安心と説明</b><span>ホームルーターの端末残債を見落とす</span></div>
+      <div class="mistake"><b>× その場で総額を断定</b><span>最新資料を確認せず案内してしまう</span></div>
+    </div>
+  </section>
+
+  <section class="alert">
+    <b>解約金・端末代・キャンペーンは変更が多い項目です。</b><br>
+    BBマスターでは「確認漏れを防ぐ」ことを優先し、金額は接客時の最新資料を最終確認してください。
+  </section>
+</section>
+
+
+<section id="billCheck" class="page">
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>請求書を見せてもらったら</span><h2>請求書チェックマスター</h2></div></div>
+
+  <section class="card bill-hero">
+    <div>
+      <span class="label">新人さん向け</span>
+      <h3>請求書は「金額」より先に“中身”を見る</h3>
+      <p>月額だけ見ても、何の回線・何のオプション・何の残債か分からない。まず項目名を整理する。</p>
+    </div>
+    <div class="bill-order">
+      <div><span>1</span><b>回線名</b></div><i>→</i>
+      <div><span>2</span><b>基本料</b></div><i>→</i>
+      <div><span>3</span><b>オプション</b></div><i>→</i>
+      <div><span>4</span><b>残債</b></div><i>→</i>
+      <div><span>5</span><b>電話・TV</b></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">請求書の“見る場所”イメージ</h3>
+    <div class="mock-bill">
+      <div class="bill-head"><b>インターネットご利用明細</b><span>今月のご請求</span></div>
+      <div class="bill-row highlight h1"><span>① サービス名</span><b>○○光 / ○○Air / home 5G など</b></div>
+      <div class="bill-row highlight h2"><span>② 基本料金</span><b>月額基本料</b></div>
+      <div class="bill-row highlight h3"><span>③ オプション</span><b>電話 / TV / Wi‑Fi / サポート等</b></div>
+      <div class="bill-row highlight h4"><span>④ 端末・工事費</span><b>分割代金 / 工事費分割</b></div>
+      <div class="bill-row highlight h5"><span>⑤ 割引</span><b>セット割 / キャンペーン等</b></div>
+      <div class="bill-total"><span>請求合計</span><strong>XXXX円</strong></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">新人さんが最初に書き出す6項目</h3>
+    <div class="bill-check-grid">
+      <label><input type="checkbox"> 回線名</label>
+      <label><input type="checkbox"> 1G / 10G</label>
+      <label><input type="checkbox"> 基本料金</label>
+      <label><input type="checkbox"> 電話・TV</label>
+      <label><input type="checkbox"> 端末 / 工事費残債</label>
+      <label><input type="checkbox"> 割引・キャンペーン</label>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">「高いですね」で終わらない</h3>
+    <div class="bill-breakdown">
+      <div class="bb-part base"><b>基本料</b><span>回線そのもの</span></div>
+      <div class="bb-plus">＋</div>
+      <div class="bb-part option"><b>オプション</b><span>電話・TV等</span></div>
+      <div class="bb-plus">＋</div>
+      <div class="bb-part balance"><b>残債</b><span>端末・工事</span></div>
+      <div class="bb-minus">−</div>
+      <div class="bb-part discount"><b>割引</b><span>セット割等</span></div>
+      <div class="bb-eq">＝</div>
+      <div class="bb-part total"><b>実際の請求</b><span>ここを比較</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">請求書から乗り換え可否を考える流れ</h3>
+    <div class="bill-flow">
+      <div><span>1</span><b>今の回線名</b><small>まず正確に</small></div><i>→</i>
+      <div><span>2</span><b>回線種別</b><small>フレッツ / コラボ / 独自</small></div><i>→</i>
+      <div><span>3</span><b>電話・TV</b><small>引継ぎ確認</small></div><i>→</i>
+      <div><span>4</span><b>残債</b><small>解約負担確認</small></div><i>→</i>
+      <div><span>5</span><b>候補決定</b><small>新規 / 転用 / 事業者変更</small></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">請求書でよくある“見落とし”</h3>
+    <div class="bill-mistakes">
+      <div><b>× 回線名を見ずに「○○系」と判断</b><span>正式なサービス名を確認する</span></div>
+      <div><b>× 合計金額だけ比較</b><span>電話・TV・残債を分けて見る</span></div>
+      <div><b>× 割引後料金だけ比較</b><span>割引終了後や条件も確認</span></div>
+      <div><b>× 端末代を月額料金と勘違い</b><span>端末・工事費の分割を切り分ける</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">請求書ヒアリングメモ</h3>
+    <div class="memo-grid">
+      <label>現在回線<input id="memoLine" placeholder="例：○○光"></label>
+      <label>月額合計<input id="memoTotal" inputmode="numeric" placeholder="例：6380"></label>
+      <label>電話<input id="memoPhone" placeholder="あり / なし"></label>
+      <label>TV<input id="memoTv" placeholder="あり / なし"></label>
+      <label>端末残債<input id="memoDevice" inputmode="numeric" placeholder="0"></label>
+      <label>工事費残債<input id="memoWork" inputmode="numeric" placeholder="0"></label>
+    </div>
+    <button class="memo-btn" onclick="makeBillMemo()">確認内容をまとめる</button>
+    <div id="billMemoResult" class="bill-memo-result">入力した内容がここにまとまります。</div>
+  </section>
+
+  <section class="card">
+    <h3 class="mini-title">そのまま使える一言</h3>
+    <div class="talk-box">
+      <span>請求書を見せてもらった時</span>
+      <p>「合計金額だけではなく、回線・電話・テレビ・端末代がどう入っているかを一緒に確認しますね」</p>
+    </div>
+  </section>
+
+  <section class="alert">
+    <b>請求書の表記は会社・契約内容で異なります。</b><br>
+    BBマスターでは“見る順番”を覚えるための図解として使い、正式な契約内容は各社の最新情報・契約画面で確認してください。
+  </section>
+</section>
+
+
+<section id="salesMode" class="page">
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>売場でそのまま使う</span><h2>接客モード</h2></div></div>
+
+  <section class="card salesmode-intro">
+    <div>
+      <span class="label">新人さん向け</span>
+      <h3>上から順番に進めるだけ</h3>
+      <p>接客で何を聞くか迷ったら、このモードを開いて1ステップずつ確認。</p>
+    </div>
+    <div class="salesmode-road">
+      <span>聞く</span><i>→</i><span>候補</span><i>→</i><span>手続き</span><i>→</i><span>工事</span><i>→</i><span>費用</span><i>→</i><span>提案</span>
+    </div>
+  </section>
+
+  <div class="sales-progress"><i id="salesProgressBar" style="width:14%"></i></div>
+  <section id="salesModeCard" class="salesmode-card card"></section>
+</section>
+
+
+<section id="mustCheck" class="page">
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>見落とし防止</span><h2>接客前の絶対確認</h2></div></div>
+
+  <section class="card must-hero">
+    <div>
+      <span class="label">新人さん向け</span>
+      <h3>この7個を確認してから提案</h3>
+      <p>1つでも不明なら、そこで確認。曖昧なまま先に進まない。</p>
+    </div>
+    <div class="must-count">7</div>
+  </section>
+
+  <div class="must-grid">
+    <label><input type="checkbox"><span>1</span><div><b>現在の回線名</b><small>「光です」だけでは不足</small></div></label>
+    <label><input type="checkbox"><span>2</span><div><b>1G / 10G</b><small>手続き・工事が変わる場合あり</small></div></label>
+    <label><input type="checkbox"><span>3</span><div><b>戸建 / 集合</b><small>建物設備・提供条件に関係</small></div></label>
+    <label><input type="checkbox"><span>4</span><div><b>固定電話</b><small>番号を残すかまで確認</small></div></label>
+    <label><input type="checkbox"><span>5</span><div><b>TV</b><small>光TV・BS等を確認</small></div></label>
+    <label><input type="checkbox"><span>6</span><div><b>解約負担</b><small>解約金・端末残債・工事費残債</small></div></label>
+    <label><input type="checkbox"><span>7</span><div><b>最新条件</b><small>料金・工事費・キャンペーン</small></div></label>
+  </div>
+
+  <section class="card red-flag">
+    <h3>この言い方は危険</h3>
+    <div class="flag-grid">
+      <div><b>×「絶対工事なしです」</b><span>設備・品目変更で変わることがある</span></div>
+      <div><b>×「番号そのままです」</b><span>発番元・サービスで条件確認</span></div>
+      <div><b>×「10Gなら10倍速いです」</b><span>宅内機器・Wi‑Fi・端末も影響</span></div>
+      <div><b>×「この金額で確定です」</b><span>最新資料・追加工事を確認</span></div>
+    </div>
+  </section>
+</section>
+
 <section id="basics" class="page">
   <div class="page-title"><button onclick="go('home')">←</button><div><span>新人さん向け</span><h2>超基礎を図で覚える</h2></div></div>
   <div class="basic-grid">
@@ -649,6 +1217,13 @@
   <button onclick="go('construction')"><span>⌂</span>工事</button>
   <button onclick="go('scenario')"><span>☑</span>事例</button>
   <button onclick="go('visuals')"><span>◈</span>図解</button>
+  <button onclick="go('serviceGuide')"><span>★</span>攻略</button>
+  <button onclick="go('quickTable')"><span>▦</span>早見</button>
+  <button onclick="go('fees')"><span>¥</span>費用</button>
+  <button onclick="go('switchCost')"><span>↔</span>乗換</button>
+  <button onclick="go('billCheck')"><span>▤</span>請求</button>
+  <button onclick="go('salesMode')"><span>▶</span>接客</button>
+  <button onclick="go('mustCheck')"><span>!</span>確認</button>
 </nav>
 </div>
 <script src="app.js"></script>

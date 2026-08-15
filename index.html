@@ -16,7 +16,7 @@
     <div class="brandmark">BB</div>
     <div><b>BBマスター</b><span>Broadband Sales Navigator</span></div>
   </div>
-  <div class="version">Ver.2.2</div>
+  <div class="version">Ver.2.3</div>
 </header>
 
 <main>
@@ -53,6 +53,7 @@
     <button class="feature f5" onclick="go('basics')"><span class="ico">✦</span><b>超基礎</b><small>1G・10G・光コラボ</small></button>
     <button class="feature f6" onclick="go('quiz')"><span class="ico">✓</span><b>接客問題</b><small>実践形式で覚える</small></button>
     <button class="feature f7" onclick="go('construction')"><span class="ico">⌂</span><b>工事マスター</b><small>戸建・集合・宅内を図解</small></button>
+    <button class="feature f8" onclick="go('scenario')"><span class="ico">☑</span><b>接客シナリオ</b><small>実際の案内例で覚える</small></button>
   </div>
 
   <section class="card today">
@@ -304,7 +305,142 @@
     </div>
   </section>
 
-  <section class="alert"><b>工事費は回線・プラン・建物・工事内容で変わります。</b><br>BBマスターでは工事の仕組みを理解し、最終金額は最新の店頭資料で確認する使い方にしています。</section>
+  
+<section class="card">
+  <h3 class="mini-title">工事費の考え方</h3>
+  <div class="fee-logic">
+    <div class="fee-box"><b>基本工事費</b><span>新規 / 切替 / 品目変更などで考える</span></div>
+    <div class="fee-plus">＋</div>
+    <div class="fee-box"><b>追加費用の可能性</b><span>土日祝 / 電話 / TV / 追加工事など</span></div>
+    <div class="fee-eq">＝</div>
+    <div class="fee-box fee-total"><b>最終確認</b><span>最新資料で金額確認</span></div>
+  </div>
+  <p class="small-note">※固定の金額は変更しやすいため、BBマスターでは「どんな項目で増減するか」を理解する構成にしています。</p>
+</section>
+
+<section class="card">
+  <h3 class="mini-title">追加工事ってどんなもの？</h3>
+  <div class="extra-grid">
+    <div class="extra-item"><b>宅内配線</b><span>建物状況で必要になる場合あり</span></div>
+    <div class="extra-item"><b>電話工事</b><span>固定電話オプション時に確認</span></div>
+    <div class="extra-item"><b>TV工事</b><span>光TV利用時に確認</span></div>
+    <div class="extra-item"><b>土日祝工事</b><span>日程条件で追加になる場合あり</span></div>
+  </div>
+</section>
+
+<section class="card">
+  <h3 class="mini-title">集合住宅の方式イメージ</h3>
+  <div class="mansion-types">
+    <div class="mtype">
+      <div class="mhead">光配線方式</div>
+      <div class="mroute">共用部 → 光配線 → 各戸</div>
+      <p>部屋まで光でつながる方式。対応状況を確認。</p>
+    </div>
+    <div class="mtype">
+      <div class="mhead">VDSL など</div>
+      <div class="mroute">共用部 → 既存配線 → 各戸</div>
+      <p>建物設備に合わせた方式。住居設備次第で条件が変わる。</p>
+    </div>
+    <div class="mtype">
+      <div class="mhead">LAN方式など</div>
+      <div class="mroute">共用部 → LAN設備 → 各戸</div>
+      <p>建物設備が整っているケース。住所確認が大切。</p>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h3 class="mini-title">宅内機器のつながり</h3>
+  <div class="inside-map">
+    <div class="imap-box dark">光コンセント</div><i>→</i>
+    <div class="imap-box blue">ONU</div><i>→</i>
+    <div class="imap-box cyan">Wi‑Fiルーター</div><i>→</i>
+    <div class="imap-box green">スマホ・PC・TV</div>
+  </div>
+  <p class="small-note">「Wi‑Fiが欲しい」= ONUだけでは足りないことが多い。ルーターの役割も一緒に説明すると分かりやすい。</p>
+</section>
+
+<section class="card">
+  <h3 class="mini-title">工事説明で新人さんが言いやすい言葉</h3>
+  <div class="talk-grid">
+    <div class="talk-item"><b>戸建</b><span>「外からお家に回線を引き込んで、お部屋の機器につなぐ流れです」</span></div>
+    <div class="talk-item"><b>集合</b><span>「建物設備の状況を確認しながら、お部屋までつなげる形になります」</span></div>
+    <div class="talk-item"><b>工事なし</b><span>「設備状況によっては訪問工事なしで切替できる場合があります」</span></div>
+    <div class="talk-item"><b>電話・TVあり</b><span>「ネットだけでなく、電話やテレビの工事・手続きも一緒に確認します」</span></div>
+  </div>
+</section>
+
+<section class="alert"><b>工事費は回線・プラン・建物・工事内容で変わります。</b><br>BBマスターでは工事の仕組みを理解し、最終金額は最新の店頭資料で確認する使い方にしています。</section>
+</section>
+
+
+<section id="scenario" class="page">
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>売場でそのまま使う</span><h2>接客シナリオ集</h2></div></div>
+
+  <section class="card">
+    <h3 class="mini-title">シナリオは 3ステップで考える</h3>
+    <div class="sales-steps">
+      <div><span>1</span><b>今の状況を聞く</b><small>回線 / スマホ / 住居</small></div><i>→</i>
+      <div><span>2</span><b>条件を確認</b><small>電話 / TV / 工事 / 速度</small></div><i>→</i>
+      <div><span>3</span><b>候補を絞る</b><small>提案理由も一緒に伝える</small></div>
+    </div>
+  </section>
+
+  <div class="scenario-grid">
+    <article class="card scard">
+      <div class="shead">Case 1</div>
+      <h3>docomoスマホ / 工事したくない</h3>
+      <div class="sbadges"><span>docomo</span><span>工事NG</span></div>
+      <p><b>候補：</b>ドコモ home 5G、比較でドコモ光も提示</p>
+      <p><b>聞くこと：</b>登録住所、利用場所、固定電話の有無</p>
+      <p><b>一言：</b>「工事せずに早く使いたいなら home 5G が候補です」</p>
+    </article>
+
+    <article class="card scard">
+      <div class="shead">Case 2</div>
+      <h3>SoftBankスマホ / 固定電話あり</h3>
+      <div class="sbadges"><span>SoftBank</span><span>電話あり</span></div>
+      <p><b>候補：</b>SoftBank 光、Air は電話条件も比較</p>
+      <p><b>聞くこと：</b>番号を残すか、TV利用の有無、工事可否</p>
+      <p><b>一言：</b>「電話を残したい場合は光回線の方が案内しやすいケースがあります」</p>
+    </article>
+
+    <article class="card scard">
+      <div class="shead">Case 3</div>
+      <h3>au / UQスマホ / 速度重視</h3>
+      <div class="sbadges"><span>au・UQ</span><span>速度重視</span></div>
+      <p><b>候補：</b>auひかり、NURO光、10G系も比較</p>
+      <p><b>聞くこと：</b>エリア、戸建/集合、工事OKか</p>
+      <p><b>一言：</b>「速度重視なら独自回線や10Gも候補です」</p>
+    </article>
+
+    <article class="card scard">
+      <div class="shead">Case 4</div>
+      <h3>フレッツ光を使っている</h3>
+      <div class="sbadges"><span>フレッツ光</span><span>乗り換え</span></div>
+      <p><b>候補：</b>転用の可能性を確認</p>
+      <p><b>聞くこと：</b>1G / 10G、電話・TV、乗り換え先</p>
+      <p><b>一言：</b>「まずは転用できる組み合わせか確認します」</p>
+    </article>
+
+    <article class="card scard">
+      <div class="shead">Case 5</div>
+      <h3>光コラボから別の光コラボへ</h3>
+      <div class="sbadges"><span>光コラボ</span><span>乗り換え</span></div>
+      <p><b>候補：</b>事業者変更の可能性を確認</p>
+      <p><b>聞くこと：</b>現在回線名、1G / 10G、電話・TV</p>
+      <p><b>一言：</b>「同じ光コラボ系でも条件確認が必要です」</p>
+    </article>
+
+    <article class="card scard">
+      <div class="shead">Case 6</div>
+      <h3>ネットなし / 新居 / 何も分からない</h3>
+      <div class="sbadges"><span>新規</span><span>初心者</span></div>
+      <p><b>候補：</b>工事OKなら光、工事NGならホームルーター</p>
+      <p><b>聞くこと：</b>住居、スマホ会社、重視点、電話・TV</p>
+      <p><b>一言：</b>「まず工事できるかと、スマホ会社を確認しましょう」</p>
+    </article>
+  </div>
 </section>
 
 <section id="basics" class="page">
@@ -335,6 +471,21 @@
       <div class="indie"><span>フレッツ系</span><i>≠</i><strong>auひかり / NURO光</strong></div>
       <p>提供エリアや工事条件が光コラボとは異なるため、乗り換え時は特に確認。</p>
     </article>
+  
+    <article class="basic card">
+      <h3>IPv6って？</h3>
+      <div class="ipv6-diagram">
+        <div class="ip old">従来</div><i>→</i><div class="ip new">IPv6</div>
+      </div>
+      <p>通信の通り道や方式を改善する考え方。細かい技術説明より、「快適性に関わる要素」として伝えると分かりやすい。</p>
+    </article>
+    <article class="basic card">
+      <h3>Wi‑Fiが遅い時</h3>
+      <div class="wifi-reasons">
+        <span>回線</span><span>ルーター</span><span>設置場所</span><span>端末</span>
+      </div>
+      <p>「回線だけが原因」と決めつけない。宅内環境も速度に影響します。</p>
+    </article>
   </div>
 </section>
 
@@ -350,6 +501,7 @@
   <button onclick="go('compare')"><span>⇄</span>比較</button>
   <button onclick="go('procedure')"><span>↗</span>手続き</button>
   <button onclick="go('construction')"><span>⌂</span>工事</button>
+  <button onclick="go('scenario')"><span>☑</span>事例</button>
 </nav>
 </div>
 <script src="app.js"></script>

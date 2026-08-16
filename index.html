@@ -16,7 +16,7 @@
     <div class="brandmark">BB</div>
     <div><b>BBマスター</b><span>Broadband Sales Navigator</span></div>
   </div>
-  <div class="version">Ver.3.3</div>
+  <div class="version">Ver.3.5</div>
 </header>
 
 <main>
@@ -70,6 +70,8 @@
       <button onclick="go('basics')"><b>超基礎</b><small>1G・10Gなど</small></button>
       <button onclick="go('quiz')"><b>練習問題</b><small>実践で覚える</small></button>
       <button onclick="go('mustCheck')"><b>絶対確認</b><small>見落とし防止</small></button>
+      <button onclick="go('talkGuide')"><b>接客トーク図解</b><small>吹き出しで覚える</small></button>
+      <button onclick="go('mistakeGuide')"><b>○×ミス図解</b><small>間違えやすい所</small></button>
     </div>
   </details>
 </div>
@@ -84,6 +86,16 @@
     <button onclick="go('phone')"><div class="type-person">☎</div><b>電話・TVあり</b><span>引継ぎ確認を先に</span><small>番号 / 光TV / 工事</small></button>
   </div>
 </section>
+
+<section class="home-visual-links card">
+  <div class="visual-title"><span>まず絵で</span><h2>よく使う図解 3枚</h2></div>
+  <div class="home-visual-grid">
+    <button onclick="go('superVisual')"><img src="ill-line-types.png" alt=""><b>回線の種類</b><span>まず3種類に分ける</span></button>
+    <button onclick="go('superVisual')"><img src="ill-procedure-big.png" alt=""><b>手続きの違い</b><span>今の回線名で決まる</span></button>
+    <button onclick="go('superVisual')"><img src="ill-bill-parts.png" alt=""><b>請求書の見方</b><span>中身を分けて見る</span></button>
+  </div>
+</section>
+
 <section class="card today">
     <div>
       <span class="label">新人さんはまずここだけ</span>
@@ -207,7 +219,12 @@
   <div class="proc-warning"><b>ただし：</b>1G/10G・電話・TVで手続きが変わることがある → 最後は資料確認</div>
 </section>
 
-  <section class="diagram card">
+  
+<section class="procedure-image card">
+  <div class="visual-title"><span>まず絵で</span><h3>手続きの違いを1枚で</h3></div>
+  <img src="ill-procedure-big.png" alt="新規・転用・事業者変更">
+</section>
+<section class="diagram card">
     <div class="route">
       <div class="node ntt"><small>NTT</small><b>フレッツ光</b></div>
       <div class="route-arrow"><span>転用</span>→</div>
@@ -1039,6 +1056,11 @@
 
 <section id="billCheck" class="page">
   <div class="page-title"><button onclick="go('home')">←</button><div><span>請求書を見せてもらったら</span><h2>請求書チェックマスター</h2></div></div>
+<section class="bill-image card">
+  <div class="visual-title"><span>まず絵で</span><h3>請求書の見方</h3></div>
+  <img src="ill-bill-parts.png" alt="請求書の見方">
+</section>
+
 
   <section class="card bill-hero">
     <div>
@@ -1198,8 +1220,98 @@
 </section>
 
 <section id="pictureGuide" class="page"><div class="page-title"><button onclick="go('home')">←</button><div><span>文章より先に見る</span><h2>絵でわかるBB</h2></div></div><section class="card picture-intro"><span class="label">新人さん向け</span><h3>まず絵を見る → あとで言葉を読む</h3><p>光回線の工事や機器は、どこからどこへつながるかを絵で見る方が覚えやすい。</p></section><section class="picture-card card"><div class="picture-title"><span>01</span><div><h3>戸建の光回線工事</h3><p>外の回線設備から家の中まで、一本の流れで考える。</p></div></div><img src="ill-house-fiber.png" alt="戸建の光回線工事"><div class="picture-points"><span>外から引込</span><span>室内へ配線</span><span>光コンセント</span><span>ONU</span><span>Wi‑Fi</span></div></section><section class="picture-card card"><div class="picture-title"><span>02</span><div><h3>集合住宅の工事</h3><p>マンションは「建物設備 → 共用部 → お客様宅」で考える。</p></div></div><img src="ill-apartment.png" alt="集合住宅の工事"><div class="picture-points"><span>建物対応確認</span><span>MDF等</span><span>各戸までの設備</span><span>室内機器</span></div></section><section class="picture-card card"><div class="picture-title"><span>03</span><div><h3>ホームルーター</h3><p>光ファイバーではなく、基地局の電波を家で受ける。</p></div></div><img src="ill-home-router.png" alt="ホームルーター"><div class="picture-points"><span>光工事なし</span><span>電波を受信</span><span>Wi‑Fi化</span><span>住所・電波確認</span></div></section><section class="picture-card card"><div class="picture-title"><span>04</span><div><h3>電話・TV・工事はセットで確認</h3><p>ネットだけ先に決めると、あとから手続きが増えやすい。</p></div></div><img src="ill-phone-tv.png" alt="電話・TV・工事はセットで確認"><div class="picture-points"><span>電話番号維持</span><span>TV視聴方法</span><span>工事条件</span><span>最終提案</span></div></section><section class="picture-card card"><div class="picture-title"><span>05</span><div><h3>接客の流れ</h3><p>全部を覚えるのではなく、確認する順番を固定する。</p></div></div><img src="ill-sales-journey.png" alt="接客の流れ"></section><section class="card"><h3 class="mini-title">絵を見たあとに覚える一言</h3><div class="picture-memory"><div><b>戸建</b><span>「外 → 家 → ONU → Wi‑Fi」</span></div><div><b>集合住宅</b><span>「建物設備 → 共用部 → 部屋」</span></div><div><b>ホームルーター</b><span>「基地局 → 家 → Wi‑Fi」</span></div><div><b>接客</b><span>「聞く → 確認 → 費用 → 提案」</span></div></div></section></section>
+
+<section id="superVisual" class="page">
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>一番わかりやすく</span><h2>超図解まとめ</h2></div></div>
+
+  <section class="card picture-intro">
+    <span class="label">まずここを見る</span><h3>難しい言葉より、まず1枚絵で全体をつかむ</h3>
+    <p>「種類」「機器」「工事」「手続き」「請求書」を、文章を読む前に絵で整理。</p>
+  </section>
+
+  <section class="picture-card card"><div class="picture-title"><span>A</span><div><h3>回線の種類</h3><p>光コラボ・独自回線・ホームルーターの違い</p></div></div><img src="ill-line-types.png" alt="回線の種類"><div class="picture-points"><span>光コラボ</span><span>独自回線</span><span>ホームルーター</span></div></section>
+  <section class="picture-card card"><div class="picture-title"><span>B</span><div><h3>ONU と ルーター</h3><p>機器の役割を分けて覚える</p></div></div><img src="ill-onu-router.png" alt="ONUとルーターの違い"><div class="picture-points"><span>ONU</span><span>Wi‑Fiルーター</span><span>ホームルーター</span></div></section>
+  <section class="picture-card card"><div class="picture-title"><span>C</span><div><h3>1G と 10G</h3><p>数字だけで決めない考え方</p></div></div><img src="ill-speed-1g10g.png" alt="1Gと10Gの違い"><div class="picture-points"><span>エリア</span><span>機器</span><span>Wi‑Fi</span><span>端末</span></div></section>
+  <section class="picture-card card"><div class="picture-title"><span>D</span><div><h3>新規・転用・事業者変更</h3><p>今の回線名から考える</p></div></div><img src="ill-procedure-big.png" alt="手続きの違い"><div class="picture-points"><span>新規</span><span>転用</span><span>事業者変更</span></div></section>
+  <section class="picture-card card"><div class="picture-title"><span>E</span><div><h3>請求書の見方</h3><p>合計ではなく中身を分けて見る</p></div></div><img src="ill-bill-parts.png" alt="請求書の見方"><div class="picture-points"><span>基本料</span><span>電話・TV</span><span>残債</span><span>割引</span></div></section>
+</section>
+
+
+<section id="talkGuide" class="page">
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>そのまま売場で使う</span><h2>接客トーク図解</h2></div></div>
+
+  <section class="card talk-intro"><span class="label">新人さん向け</span><h3>説明は「聞く → 共感 → 確認 → 提案」</h3><p>難しい言葉を先に出さず、お客様の答えに合わせて短く返す。</p></section>
+
+  <section class="chat-scene card">
+    <div class="scene-title"><span>01</span><h3>最初の一言</h3></div>
+    <div class="bubble-row customer"><div class="person">👤</div><div class="bubble">ネット、どれがいいか全然分からなくて…</div></div>
+    <div class="bubble-row staff"><div class="bubble">大丈夫です。まず今の回線とスマホ会社だけ確認しますね。</div><div class="person">🧑‍💼</div></div>
+    <div class="scene-tip"><b>ポイント：</b>いきなり回線名を並べない。</div>
+  </section>
+
+  <section class="chat-scene card">
+    <div class="scene-title"><span>02</span><h3>工事したくないと言われたら</h3></div>
+    <div class="bubble-row customer"><div class="person">👤</div><div class="bubble">工事はしたくないです。</div></div>
+    <div class="bubble-row staff"><div class="bubble">それなら、まず home 5G や SoftBank Air のような工事不要タイプを比較しましょう。</div><div class="person">🧑‍💼</div></div>
+    <div class="scene-tip"><b>次に聞く：</b>利用住所・スマホ会社・固定電話の必要性。</div>
+  </section>
+
+  <section class="chat-scene card">
+    <div class="scene-title"><span>03</span><h3>速度重視と言われたら</h3></div>
+    <div class="bubble-row customer"><div class="person">👤</div><div class="bubble">とにかく速いのがいいです。</div></div>
+    <div class="bubble-row staff"><div class="bubble">速度重視なら 10G や NURO光、auひかりも候補です。まずエリアと機器環境を確認しますね。</div><div class="person">🧑‍💼</div></div>
+    <div class="scene-tip"><b>NG：</b>「10Gなら絶対10倍速いです」と言い切らない。</div>
+  </section>
+
+  <section class="chat-scene card">
+    <div class="scene-title"><span>04</span><h3>固定電話を残したいと言われたら</h3></div>
+    <div class="bubble-row customer"><div class="person">👤</div><div class="bubble">電話番号は変えたくないです。</div></div>
+    <div class="bubble-row staff"><div class="bubble">番号を残せるか確認します。今の電話サービスと、どこで発番した番号かも見ますね。</div><div class="person">🧑‍💼</div></div>
+    <div class="scene-tip"><b>ポイント：</b>番号引継ぎを断定しない。</div>
+  </section>
+
+  <section class="chat-scene card">
+    <div class="scene-title"><span>05</span><h3>フレッツ光利用中なら</h3></div>
+    <div class="bubble-row customer"><div class="person">👤</div><div class="bubble">今はフレッツ光です。</div></div>
+    <div class="bubble-row staff"><div class="bubble">ありがとうございます。光コラボへ変えるなら転用になる可能性があります。1G/10Gと電話・TVも確認しますね。</div><div class="person">🧑‍💼</div></div>
+    <div class="scene-tip"><b>覚え方：</b>フレッツ → 光コラボ = 転用の可能性。</div>
+  </section>
+
+  <section class="chat-scene card">
+    <div class="scene-title"><span>06</span><h3>最後のまとめ</h3></div>
+    <div class="bubble-row staff"><div class="bubble strong">ここまで確認できたので、あとは提供エリアと最新条件を見て、一番合う回線を絞りますね。</div><div class="person">🧑‍💼</div></div>
+    <div class="scene-tip"><b>ここで見る：</b>超早見表 → 工事費 → 乗り換え費用。</div>
+  </section>
+</section>
+
+<section id="mistakeGuide" class="page">
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>新人さんが間違えやすい</span><h2>○×ミス図解</h2></div></div>
+
+  <section class="card mistake-intro"><span class="label">これだけは覚える</span><h3>「言い切る」より「確認する」</h3><p>BB接客は条件で変わることが多い。断定より、確認する順番を覚える。</p></section>
+
+  <div class="ox-grid">
+    <article class="ox-card"><div class="ox-head bad">×</div><h3>200Vみたいに<br>“決め打ち”しない</h3><p>「この回線なら絶対工事なし」など、条件確認なしの断定はNG。</p><div class="goodline">○「設備状況を確認します」</div></article>
+    <article class="ox-card"><div class="ox-head bad">×</div><h3>10G = 必ず10倍速い</h3><p>Wi‑Fi、LAN、端末、混雑状況なども影響する。</p><div class="goodline">○「環境も含めて速さが決まります」</div></article>
+    <article class="ox-card"><div class="ox-head bad">×</div><h3>光コラボなら全部同じ</h3><p>1G/10G・電話・TVで手続きや工事が変わる場合がある。</p><div class="goodline">○「今のプランを確認します」</div></article>
+    <article class="ox-card"><div class="ox-head bad">×</div><h3>固定電話は番号そのまま</h3><p>発番元や利用サービスにより条件が変わる。</p><div class="goodline">○「番号引継ぎ可否を確認します」</div></article>
+    <article class="ox-card"><div class="ox-head bad">×</div><h3>工事不要 = お金がかからない</h3><p>ホームルーターは端末代や残債がある場合がある。</p><div class="goodline">○「端末条件と残債も見ます」</div></article>
+    <article class="ox-card"><div class="ox-head bad">×</div><h3>月額だけ比べる</h3><p>電話・TV・オプション・残債・割引も分けて見る。</p><div class="goodline">○「請求の中身を分けて比較します」</div></article>
+  </div>
+
+  <section class="card ox-summary"><h3>○ の接客に変える3語</h3><div><span>確認します</span><span>条件によります</span><span>最新資料を見ます</span></div></section>
+</section>
+
 <section id="basics" class="page">
   <div class="page-title"><button onclick="go('home')">←</button><div><span>新人さん向け</span><h2>超基礎を図で覚える</h2></div></div>
+<section class="basic-image-grid card">
+  <div class="visual-title"><span>図で覚える</span><h3>超基礎の一目図解</h3></div>
+  <div class="big-image-grid">
+    <div><img src="ill-line-types.png" alt=""><b>回線の種類</b><span>まずは3つに分類</span></div>
+    <div><img src="ill-onu-router.png" alt=""><b>機器の違い</b><span>ONU・Wi‑Fi・ホームルーター</span></div>
+    <div><img src="ill-speed-1g10g.png" alt=""><b>1G/10G</b><span>数字だけで判断しない</span></div>
+  </div>
+</section>
+
   <div class="basic-grid">
     <article class="basic card">
       <h3>1G と 10G</h3>
@@ -1256,6 +1368,7 @@
   <button onclick="go('construction')"><span>⌂</span>工事</button>
   <button onclick="go('quickTable')"><span>▦</span>比較</button>
   <button onclick="go('procedure')"><span>↔</span>乗換</button>
+  <button onclick="go('superVisual')"><span>◎</span>図解</button>
 </nav>
 </div>
 <script src="app.js"></script>

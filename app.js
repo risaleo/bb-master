@@ -1,6 +1,6 @@
 
 const pages=[...document.querySelectorAll('.page')];
-function go(id){pages.forEach(p=>p.classList.toggle('active',p.id===id));window.scrollTo({top:0,behavior:'smooth'});if(id==='diagnosis')renderDiag();if(id==='salesMode')renderSalesMode();}
+function go(id){pages.forEach(p=>p.classList.toggle('active',p.id===id));window.scrollTo({top:0,behavior:'smooth'});if(id==='diagnosis')renderDiag();if(id==='salesMode')renderSalesMode();if(id==='beginnerMode')renderBeginnerMode();}
 
 const services=[
  {name:'ドコモ光',type:'光回線',accent:'#2357ff',why:'docomo利用者＋固定回線を希望',good:'スマホとの組み合わせを確認しやすい',check:'1G/10G・提供エリア・電話・TV・手続き区分',word:'「docomoならまず候補に。工事NGならhome 5Gも比較」'},
@@ -395,3 +395,62 @@ function runBBSearch(){
 document.addEventListener('keydown',e=>{
  if(e.key==='Enter' && document.activeElement?.id==='bbSearch')runBBSearch();
 });
+
+const beginnerSteps=[
+ {key:'internet',title:'今、家でインターネット使ってる？',sub:'まずは「今あるか・ないか」だけ確認。',opts:['使っている','使っていない','よく分からない']},
+ {key:'work',title:'光回線の工事はできそう？',sub:'賃貸・急ぎ・工事NGなどもここで確認。',opts:['工事OK','工事したくない / できない','まだ分からない']},
+ {key:'mobile',title:'スマホはどこを使ってる？',sub:'候補を考える入口にします。',opts:['docomo','SoftBank','au / UQ','その他 / 複数']},
+ {key:'finish',title:'ここまでで候補を出す',sub:'難しい言葉はまだ使わなくてOK。',opts:['結果を見る']}
+];
+let beginnerStep=0, beginnerAnswers={};
+
+function renderBeginnerMode(){
+ const card=document.getElementById('beginnerCard');
+ const bar=document.getElementById('beginnerBar');
+ if(!card||!bar)return;
+ bar.style.width=Math.min(100,((beginnerStep+1)/beginnerSteps.length)*100)+'%';
+
+ if(beginnerStep>=beginnerSteps.length-1){
+   const i=beginnerAnswers.internet||'', w=beginnerAnswers.work||'', m=beginnerAnswers.mobile||'';
+   let main='まず現在の回線名を確認';
+   let sub='請求書や契約画面を見て、正式な回線名を確認しよう。';
+   let candidates=[];
+   if(w.includes('したくない')||w.includes('できない')){
+     main='ホームルーターを先に比較';
+     sub='光工事なしの候補から見る。住所・電波・端末条件は確認。';
+     candidates=m==='docomo'?['home 5G']:m==='SoftBank'?['SoftBank Air']:['home 5G','SoftBank Air'];
+   }else{
+     candidates=m==='docomo'?['ドコモ光']:m==='SoftBank'?['SoftBank 光']:m==='au / UQ'?['auひかり']:['@nifty光を含め固定回線を比較'];
+     if(i==='使っていない'){main='新規回線を考える';sub='住所・建物・工事可否を見て固定回線を比較。';}
+     if(i==='使っている'){main='今の回線名を確認して乗り換え方を決める';sub='フレッツか光コラボか独自回線かを確認。';}
+   }
+   card.innerHTML=`
+    <div class="beginner-head"><button onclick="beginnerBack()">← 1つ前</button><span>RESULT</span></div>
+    <h3>${main}</h3><p>${sub}</p>
+    <div class="beginner-result"><small>まず見る候補</small>${candidates.map(x=>`<b>${x}</b>`).join('')}</div>
+    <div class="beginner-next"><button onclick="go('serviceGuide')">候補を見る</button><button onclick="go('construction')">工事を見る</button><button onclick="go('procedure')">乗り換えを見る</button></div>
+    <div class="beginner-talk"><span>そのまま使える一言</span><p>「まず今の回線と工事できるかだけ確認して、合いそうな候補から一緒に見ていきますね」</p></div>
+    <button class="beginner-reset" onclick="resetBeginnerMode()">最初から</button>`;
+   return;
+ }
+ const s=beginnerSteps[beginnerStep];
+ card.innerHTML=`
+   <div class="beginner-head">${beginnerStep>0?'<button onclick="beginnerBack()">← 1つ前</button>':'<span></span>'}<span>STEP ${beginnerStep+1}/3</span></div>
+   <div class="beginner-question-no">${beginnerStep+1}</div>
+   <h3>${s.title}</h3><p>${s.sub}</p>
+   <div class="beginner-options">${s.opts.map(o=>`<button onclick="chooseBeginner('${s.key}','${o}')">${o}</button>`).join('')}</div>`;
+}
+function chooseBeginner(key,val){beginnerAnswers[key]=val;beginnerStep++;renderBeginnerMode();}
+function beginnerBack(){if(beginnerStep<=0)return;beginnerStep--;delete beginnerAnswers[beginnerSteps[beginnerStep].key];renderBeginnerMode();}
+function resetBeginnerMode(){beginnerStep=0;beginnerAnswers={};renderBeginnerMode();}
+function showEasyWord(word){
+ const dict={
+  '転用':'フレッツ光から、ドコモ光・@nifty光・SoftBank 光などの光コラボへ移る時に出てくる言葉。',
+  '事業者変更':'今の光コラボから、別の光コラボへ移る時に出てくる言葉。',
+  'ONU':'家に入ってきた光回線を、インターネットで使えるようにつなぐ機器。Wi‑Fiルーターとは役割が別。',
+  '10G':'最大速度が大きいプラン。エリア・ルーター・LAN・Wi‑Fi・端末も確認。'
+ };
+ const box=document.getElementById('easyWordBox');
+ if(box)box.innerHTML=`<b>${word}</b><span>${dict[word]}</span>`;
+}
+setTimeout(()=>renderBeginnerMode(),0);

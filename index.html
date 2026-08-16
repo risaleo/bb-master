@@ -16,7 +16,7 @@
     <div class="brandmark">BB</div>
     <div><b>BBマスター</b><span>Broadband Sales Navigator</span></div>
   </div>
-  <div class="version">Ver.3.5</div>
+  <div class="version">Ver.3.6</div>
 </header>
 
 <main>
@@ -26,7 +26,7 @@
       <span class="kicker">新人さん向け 接客ナビ</span>
       <h1>光回線、<br><em>順番どおりなら難しくない。</em></h1>
       <p>「何を聞けばいい？」から「何を提案する？」まで、売場でそのまま使える流れにしました。</p>
-      <button class="cta" onclick="go('salesMode')">接客モードをはじめる <span>→</span></button>
+      <button class="cta" onclick="go('beginnerMode')">BBはじめてモード <span>→</span></button>
     </div>
     <div class="hero-visual">
       <div class="orb"></div>
@@ -1301,6 +1301,33 @@
   <section class="card ox-summary"><h3>○ の接客に変える3語</h3><div><span>確認します</span><span>条件によります</span><span>最新資料を見ます</span></div></section>
 </section>
 
+
+<section id="beginnerMode" class="page">
+  <div class="page-title"><button onclick="go('home')">←</button><div><span>超初心者向け</span><h2>BBはじめてモード</h2></div></div>
+  <section class="card beginner-intro">
+    <span class="label">まず3つだけ</span>
+    <h3>専門用語はあとでOK</h3>
+    <p>最初から全部覚えなくて大丈夫。まずこの3つを聞けば次に見る場所が分かります。</p>
+    <div class="beginner-three">
+      <div><span>1</span><b>今ネット使ってる？</b></div>
+      <div><span>2</span><b>工事できる？</b></div>
+      <div><span>3</span><b>スマホはどこ？</b></div>
+    </div>
+  </section>
+  <div class="beginner-progress"><i id="beginnerBar" style="width:25%"></i></div>
+  <section id="beginnerCard" class="card beginner-card"></section>
+  <section class="card beginner-words">
+    <div class="visual-title"><span>言葉が出たら</span><h3>専門用語はこう覚える</h3></div>
+    <div class="easy-word-grid">
+      <button onclick="showEasyWord('転用')"><b>転用</b><span>フレッツ → 光コラボ</span></button>
+      <button onclick="showEasyWord('事業者変更')"><b>事業者変更</b><span>光コラボ → 別の光コラボ</span></button>
+      <button onclick="showEasyWord('ONU')"><b>ONU</b><span>光回線をネットにつなぐ箱</span></button>
+      <button onclick="showEasyWord('10G')"><b>10G</b><span>速いプラン。でも環境確認</span></button>
+    </div>
+    <div id="easyWordBox" class="easy-word-box">気になる言葉を押すと、超かんたん説明が出ます。</div>
+  </section>
+</section>
+
 <section id="basics" class="page">
   <div class="page-title"><button onclick="go('home')">←</button><div><span>新人さん向け</span><h2>超基礎を図で覚える</h2></div></div>
 <section class="basic-image-grid card">
@@ -1369,6 +1396,7 @@
   <button onclick="go('quickTable')"><span>▦</span>比較</button>
   <button onclick="go('procedure')"><span>↔</span>乗換</button>
   <button onclick="go('superVisual')"><span>◎</span>図解</button>
+  <button onclick="go('beginnerMode')"><span>★</span>はじめて</button>
 </nav>
 </div>
 <script src="app.js"></script>

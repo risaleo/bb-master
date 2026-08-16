@@ -16,7 +16,7 @@
     <div class="brandmark">BB</div>
     <div><b>BBマスター</b><span>Broadband Sales Navigator</span></div>
   </div>
-  <div class="version">Ver.3.2</div>
+  <div class="version">Ver.3.3</div>
 </header>
 
 <main>
@@ -26,7 +26,7 @@
       <span class="kicker">新人さん向け 接客ナビ</span>
       <h1>光回線、<br><em>順番どおりなら難しくない。</em></h1>
       <p>「何を聞けばいい？」から「何を提案する？」まで、売場でそのまま使える流れにしました。</p>
-      <button class="cta" onclick="go('diagnosis')">接客診断をはじめる <span>→</span></button>
+      <button class="cta" onclick="go('salesMode')">接客モードをはじめる <span>→</span></button>
     </div>
     <div class="hero-visual">
       <div class="orb"></div>
@@ -45,27 +45,46 @@
     </div>
   </section>
 
-  <div class="quick-grid">
-    <button class="feature f1" onclick="go('diagnosis')"><span class="ico">◎</span><b>接客診断</b><small>質問どおりに聞くだけ</small></button>
-    <button class="feature f2" onclick="go('compare')"><span class="ico">⇄</span><b>回線比較</b><small>7サービスを一気に整理</small></button>
-    <button class="feature f3" onclick="go('procedure')"><span class="ico">↗</span><b>手続き図解</b><small>新規・転用・事業者変更</small></button>
-    <button class="feature f4" onclick="go('phone')"><span class="ico">☎</span><b>電話・TV</b><small>見落としやすい確認点</small></button>
-    <button class="feature f5" onclick="go('basics')"><span class="ico">✦</span><b>超基礎</b><small>1G・10G・光コラボ</small></button>
-    <button class="feature f6" onclick="go('quiz')"><span class="ico">✓</span><b>接客問題</b><small>実践形式で覚える</small></button>
-    <button class="feature f7" onclick="go('construction')"><span class="ico">⌂</span><b>工事マスター</b><small>戸建・集合・宅内を図解</small></button>
-    <button class="feature f8" onclick="go('scenario')"><span class="ico">☑</span><b>接客シナリオ</b><small>実際の案内例で覚える</small></button>
-    <button class="feature f9" onclick="go('visuals')"><span class="ico">◈</span><b>図解ライブラリ</b><small>絵と図で一気に理解</small></button>
-    <button class="feature f10" onclick="go('serviceGuide')"><span class="ico">★</span><b>サービス攻略</b><small>7回線を1ページずつ</small></button>
-    <button class="feature f11" onclick="go('quickTable')"><span class="ico">▦</span><b>超早見表</b><small>違いを横並びで確認</small></button>
-    <button class="feature f12" onclick="go('fees')"><span class="ico">¥</span><b>工事費・費用</b><small>数字を図で確認</small></button>
-    <button class="feature f13" onclick="go('switchCost')"><span class="ico">↔</span><b>乗り換え費用</b><small>解約金・残債・特典を整理</small></button>
-    <button class="feature f14" onclick="go('billCheck')"><span class="ico">▤</span><b>請求書チェック</b><small>どこを見るか図解</small></button>
-    <button class="feature f15" onclick="go('salesMode')"><span class="ico">▶</span><b>接客モード</b><small>最初から最後まで案内</small></button>
-    <button class="feature f16" onclick="go('mustCheck')"><span class="ico">!</span><b>絶対確認</b><small>見落とし防止チェック</small></button>
-    <button class="feature f17" onclick="go('pictureGuide')"><span class="ico">▣</span><b>絵でわかるBB</b><small>工事・機器を絵で理解</small></button>
+  
+<div class="simple-home">
+  <div class="home-caption">
+    <span class="label">新人さんはこの4つだけ</span>
+    <h2>まず「接客 → 工事 → 乗り換え → 比較」</h2>
+    <p>全部のメニューを一度に覚えなくてOK。接客中はこの4つから入れば迷いにくい。</p>
   </div>
+  <div class="big-four">
+    <button class="bf bf-sales" onclick="go('salesMode')"><div class="bf-icon">▶</div><div><b>① 接客する</b><span>質問どおり進める</span></div><em>まずここ</em></button>
+    <button class="bf bf-work" onclick="go('construction')"><div class="bf-icon">⌂</div><div><b>② 工事を見る</b><span>戸建・集合・工事なし</span></div><em>絵で理解</em></button>
+    <button class="bf bf-change" onclick="go('procedure')"><div class="bf-icon">↔</div><div><b>③ 乗り換えを見る</b><span>新規・転用・事業者変更</span></div><em>迷いやすい所</em></button>
+    <button class="bf bf-compare" onclick="go('quickTable')"><div class="bf-icon">▦</div><div><b>④ 回線を比べる</b><span>7サービス超早見</span></div><em>一気に比較</em></button>
+  </div>
+  <details class="more-menu">
+    <summary>もっと詳しく見る <span>＋</span></summary>
+    <div class="more-grid">
+      <button onclick="go('pictureGuide')"><b>絵でわかるBB</b><small>まず絵で理解</small></button>
+      <button onclick="go('serviceGuide')"><b>サービス攻略</b><small>7回線を個別に</small></button>
+      <button onclick="go('fees')"><b>工事費・費用</b><small>数字を確認</small></button>
+      <button onclick="go('switchCost')"><b>乗り換え費用</b><small>解約金・残債</small></button>
+      <button onclick="go('billCheck')"><b>請求書チェック</b><small>どこを見る？</small></button>
+      <button onclick="go('phone')"><b>電話・TV</b><small>引継ぎ確認</small></button>
+      <button onclick="go('basics')"><b>超基礎</b><small>1G・10Gなど</small></button>
+      <button onclick="go('quiz')"><b>練習問題</b><small>実践で覚える</small></button>
+      <button onclick="go('mustCheck')"><b>絶対確認</b><small>見落とし防止</small></button>
+    </div>
+  </details>
+</div>
 
-  <section class="card today">
+  
+<section class="thirty card">
+  <div class="visual-title"><span>30秒で考える</span><h2>お客様を4タイプに分ける</h2></div>
+  <div class="customer-types">
+    <button onclick="go('serviceGuide')"><div class="type-person">📱</div><b>スマホ割重視</b><span>スマホ会社から候補</span><small>docomo / SoftBank / au・UQ</small></button>
+    <button onclick="go('construction')"><div class="type-person">🚫</div><b>工事したくない</b><span>ホームルーター中心</span><small>home 5G / SoftBank Air</small></button>
+    <button onclick="go('serviceGuide')"><div class="type-person">⚡</div><b>速度重視</b><span>10G・独自回線も確認</span><small>NURO / auひかり等</small></button>
+    <button onclick="go('phone')"><div class="type-person">☎</div><b>電話・TVあり</b><span>引継ぎ確認を先に</span><small>番号 / 光TV / 工事</small></button>
+  </div>
+</section>
+<section class="card today">
     <div>
       <span class="label">新人さんはまずここだけ</span>
       <h2>最初の5項目を聞けば、提案の8割が見える</h2>
@@ -178,6 +197,16 @@
 
 <section id="procedure" class="page">
   <div class="page-title"><button onclick="go('home')">←</button><div><span>一番つまずく所</span><h2>新規・転用・事業者変更</h2></div></div>
+<section class="procedure-simple card">
+  <div class="visual-title"><span>3秒で区別</span><h3>「今どこ？」だけ見ればOK</h3></div>
+  <div class="proc-three">
+    <div class="proc-card new-p"><span>今：回線なし / 別系統</span><i>→</i><b>新規</b><small>新しく回線を作る</small></div>
+    <div class="proc-card ten-p"><span>今：フレッツ光</span><i>→</i><b>転用</b><small>光コラボへ移る</small></div>
+    <div class="proc-card chg-p"><span>今：光コラボ</span><i>→</i><b>事業者変更</b><small>別の光コラボへ</small></div>
+  </div>
+  <div class="proc-warning"><b>ただし：</b>1G/10G・電話・TVで手続きが変わることがある → 最後は資料確認</div>
+</section>
+
   <section class="diagram card">
     <div class="route">
       <div class="node ntt"><small>NTT</small><b>フレッツ光</b></div>
@@ -234,6 +263,16 @@
 
 <section id="construction" class="page">
   <div class="page-title"><button onclick="go('home')">←</button><div><span>新人さんが一番イメージしづらい所</span><h2>光回線の工事マスター</h2></div></div>
+<section class="work-decision card">
+  <div class="visual-title"><span>まずここだけ</span><h3>工事は3つに分ければ簡単</h3></div>
+  <div class="work-three">
+    <div class="wt"><div class="wt-num">1</div><img src="ill-house-fiber.png" alt=""><b>戸建</b><span>外 → 家 → ONU → Wi‑Fi</span></div>
+    <div class="wt"><div class="wt-num">2</div><img src="ill-apartment.png" alt=""><b>集合住宅</b><span>建物設備 → 共用部 → 部屋</span></div>
+    <div class="wt"><div class="wt-num">3</div><img src="ill-home-router.png" alt=""><b>工事したくない</b><span>ホームルーターを比較</span></div>
+  </div>
+  <div class="work-rule"><b>覚え方：</b><span>戸建＝「家へ引く」</span><span>集合＝「建物設備を見る」</span><span>工事NG＝「電波で使う」</span></div>
+</section>
+
 
   <section class="construction-gallery card"><div class="visual-title"><span>まず絵で見る</span><h3>工事のイメージ</h3></div><div class="construction-gallery-grid"><button onclick="go('pictureGuide')"><img src="ill-house-fiber.png"><b>戸建工事</b><span>外から家へ</span></button><button onclick="go('pictureGuide')"><img src="ill-apartment.png"><b>集合住宅</b><span>建物設備から部屋へ</span></button><button onclick="go('pictureGuide')"><img src="ill-home-router.png"><b>工事なし</b><span>ホームルーター</span></button></div></section><section class="construction-hero card">
     <div>
@@ -1211,22 +1250,12 @@
 </section>
 </main>
 
-<nav class="nav">
+<nav class="nav nav-simple">
   <button onclick="go('home')"><span>⌂</span>ホーム</button>
-  <button onclick="go('diagnosis')"><span>◎</span>診断</button>
-  <button onclick="go('compare')"><span>⇄</span>比較</button>
-  <button onclick="go('procedure')"><span>↗</span>手続き</button>
-  <button onclick="go('construction')"><span>⌂</span>工事</button>
-  <button onclick="go('scenario')"><span>☑</span>事例</button>
-  <button onclick="go('visuals')"><span>◈</span>図解</button>
-  <button onclick="go('serviceGuide')"><span>★</span>攻略</button>
-  <button onclick="go('quickTable')"><span>▦</span>早見</button>
-  <button onclick="go('fees')"><span>¥</span>費用</button>
-  <button onclick="go('switchCost')"><span>↔</span>乗換</button>
-  <button onclick="go('billCheck')"><span>▤</span>請求</button>
   <button onclick="go('salesMode')"><span>▶</span>接客</button>
-  <button onclick="go('mustCheck')"><span>!</span>確認</button>
-  <button onclick="go('pictureGuide')"><span>▣</span>絵図</button>
+  <button onclick="go('construction')"><span>⌂</span>工事</button>
+  <button onclick="go('quickTable')"><span>▦</span>比較</button>
+  <button onclick="go('procedure')"><span>↔</span>乗換</button>
 </nav>
 </div>
 <script src="app.js"></script>
